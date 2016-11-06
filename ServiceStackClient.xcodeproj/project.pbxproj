@@ -20,6 +20,17 @@
 		51D0C4061DCF99180054C26D /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* PromiseKit.framework */; };
 		51D0C40B1DCFD6170054C26D /* AssertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C4071DCFD4810054C26D /* AssertUtils.swift */; };
 		51D0C40C1DCFD61B0054C26D /* DateExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C4081DCFD4810054C26D /* DateExtensionsTests.swift */; };
+		51D0C40F1DCFD9280054C26D /* JsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C40D1DCFD9220054C26D /* JsonTests.swift */; };
+		51D0C4121DCFDFD10054C26D /* SerializeParentChildTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C4101DCFDFCC0054C26D /* SerializeParentChildTests.swift */; };
+		51D0C4151DCFE1180054C26D /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C4131DCFE1100054C26D /* StringExtensionsTests.swift */; };
+		51D0C41A1DCFE3AD0054C26D /* NativeExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C4161DCFE3A90054C26D /* NativeExtensionsTests.swift */; };
+		51D0C41B1DCFE3B60054C26D /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C4171DCFE3A90054C26D /* Template.swift */; };
+		51D0C4241DCFE8510054C26D /* ServiceClientTechStacksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C41C1DCFE84B0054C26D /* ServiceClientTechStacksTests.swift */; };
+		51D0C4251DCFE8550054C26D /* TechStacks.dtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C41D1DCFE84B0054C26D /* TechStacks.dtos.swift */; };
+		51D0C4261DCFE85A0054C26D /* TechStacksDtosJsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C41E1DCFE84B0054C26D /* TechStacksDtosJsonTests.swift */; };
+		51D0C4271DCFE85E0054C26D /* TechStacksJsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C41F1DCFE84B0054C26D /* TechStacksJsonTests.swift */; };
+		51D0C4281DCFEDDE0054C26D /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* PromiseKit.framework */; };
+		51D0C42B1DCFF0D30054C26D /* overview.json in Resources */ = {isa = PBXBuildFile; fileRef = 51D0C4291DCFF0BC0054C26D /* overview.json */; };
 		OBJ_29 /* after.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* after.swift */; };
 		OBJ_30 /* DispatchQueue+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* DispatchQueue+Promise.swift */; };
 		OBJ_31 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Error.swift */; };
@@ -59,6 +70,16 @@
 		51D0C4041DCF94E40054C26D /* ServiceStackClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceStackClient.h; path = ServiceStackClient/ServiceStackClient.h; sourceTree = "<group>"; };
 		51D0C4071DCFD4810054C26D /* AssertUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssertUtils.swift; path = ServiceStackClientTests/AssertUtils.swift; sourceTree = "<group>"; };
 		51D0C4081DCFD4810054C26D /* DateExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensionsTests.swift; path = ServiceStackClientTests/DateExtensionsTests.swift; sourceTree = "<group>"; };
+		51D0C40D1DCFD9220054C26D /* JsonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonTests.swift; path = ServiceStackClientTests/JsonTests.swift; sourceTree = "<group>"; };
+		51D0C4101DCFDFCC0054C26D /* SerializeParentChildTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SerializeParentChildTests.swift; path = ServiceStackClientTests/SerializeParentChildTests.swift; sourceTree = "<group>"; };
+		51D0C4131DCFE1100054C26D /* StringExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensionsTests.swift; path = ServiceStackClientTests/StringExtensionsTests.swift; sourceTree = "<group>"; };
+		51D0C4161DCFE3A90054C26D /* NativeExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NativeExtensionsTests.swift; path = ServiceStackClientTests/NativeExtensionsTests.swift; sourceTree = "<group>"; };
+		51D0C4171DCFE3A90054C26D /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Template.swift; path = ServiceStackClientTests/Template.swift; sourceTree = "<group>"; };
+		51D0C41C1DCFE84B0054C26D /* ServiceClientTechStacksTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceClientTechStacksTests.swift; path = ServiceStackClientTests/ServiceClientTechStacksTests.swift; sourceTree = "<group>"; };
+		51D0C41D1DCFE84B0054C26D /* TechStacks.dtos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TechStacks.dtos.swift; path = ServiceStackClientTests/TechStacks.dtos.swift; sourceTree = "<group>"; };
+		51D0C41E1DCFE84B0054C26D /* TechStacksDtosJsonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TechStacksDtosJsonTests.swift; path = ServiceStackClientTests/TechStacksDtosJsonTests.swift; sourceTree = "<group>"; };
+		51D0C41F1DCFE84B0054C26D /* TechStacksJsonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TechStacksJsonTests.swift; path = ServiceStackClientTests/TechStacksJsonTests.swift; sourceTree = "<group>"; };
+		51D0C4291DCFF0BC0054C26D /* overview.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = overview.json; path = ServiceStackClientTests/overview.json; sourceTree = "<group>"; };
 		OBJ_10 /* DispatchQueue+Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Promise.swift"; sourceTree = "<group>"; };
 		OBJ_11 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		OBJ_12 /* join.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = join.swift; sourceTree = "<group>"; };
@@ -88,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D0C4281DCFEDDE0054C26D /* PromiseKit.framework in Frameworks */,
 				51D0C3D61DCF91450054C26D /* ServiceStackClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +127,16 @@
 		51D0C3E51DCF92DB0054C26D /* ServiceStackClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				51D0C4291DCFF0BC0054C26D /* overview.json */,
+				51D0C41C1DCFE84B0054C26D /* ServiceClientTechStacksTests.swift */,
+				51D0C41D1DCFE84B0054C26D /* TechStacks.dtos.swift */,
+				51D0C41E1DCFE84B0054C26D /* TechStacksDtosJsonTests.swift */,
+				51D0C41F1DCFE84B0054C26D /* TechStacksJsonTests.swift */,
+				51D0C4161DCFE3A90054C26D /* NativeExtensionsTests.swift */,
+				51D0C4171DCFE3A90054C26D /* Template.swift */,
+				51D0C4131DCFE1100054C26D /* StringExtensionsTests.swift */,
+				51D0C4101DCFDFCC0054C26D /* SerializeParentChildTests.swift */,
+				51D0C40D1DCFD9220054C26D /* JsonTests.swift */,
 				51D0C4071DCFD4810054C26D /* AssertUtils.swift */,
 				51D0C4081DCFD4810054C26D /* DateExtensionsTests.swift */,
 				51D0C3E81DCF92F40054C26D /* Info.plist */,
@@ -302,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D0C42B1DCFF0D30054C26D /* overview.json in Resources */,
 				51D0C3EA1DCF92FF0054C26D /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,9 +359,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D0C4261DCFE85A0054C26D /* TechStacksDtosJsonTests.swift in Sources */,
+				51D0C4151DCFE1180054C26D /* StringExtensionsTests.swift in Sources */,
+				51D0C4121DCFDFD10054C26D /* SerializeParentChildTests.swift in Sources */,
+				51D0C41A1DCFE3AD0054C26D /* NativeExtensionsTests.swift in Sources */,
+				51D0C4251DCFE8550054C26D /* TechStacks.dtos.swift in Sources */,
 				51D0C3E91DCF92FD0054C26D /* ServiceStackClientTests.swift in Sources */,
 				51D0C40B1DCFD6170054C26D /* AssertUtils.swift in Sources */,
+				51D0C41B1DCFE3B60054C26D /* Template.swift in Sources */,
 				51D0C40C1DCFD61B0054C26D /* DateExtensionsTests.swift in Sources */,
+				51D0C4241DCFE8510054C26D /* ServiceClientTechStacksTests.swift in Sources */,
+				51D0C4271DCFE85E0054C26D /* TechStacksJsonTests.swift in Sources */,
+				51D0C40F1DCFD9280054C26D /* JsonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

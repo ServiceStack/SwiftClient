@@ -77,7 +77,7 @@ public extension Date {
         return dateFormatter.string(from: self as Date).appendingFormat("Z")
     }
     
-    public static func fromIsoDateString(string:String) -> Date? {
+    public static func fromIsoDateString(_ string:String) -> Date? {
         let isUtc = string.hasSuffix("Z")
         let dateFormatter = DateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!

@@ -13,7 +13,7 @@ public extension String
 {
     public var length: Int { return self.characters.count }
 
-    func index(from: Int) -> Index {
+    func index(_ from: Int) -> Index {
         return self.index(startIndex, offsetBy: from)
     }
     
@@ -26,17 +26,18 @@ public extension String
     }
     
     public func trimEnd(_ needle: Character) -> String {
-        var i: Int = self.characters.count - 1, j: Int = i
+        var i: Int = self.characters.count - 1
         
         while i >= 0 && self[self.index(self.startIndex, offsetBy: i)] == needle {
             i -= 1
         }
         
-        return self[self.startIndex ..< index(from: j-i)]
+        let s = self.substring(to: index(i + 1))
+        return s
     }
     
     public subscript (i: Int) -> Character {
-        return self[index(from: i)]
+        return self[index(i)]
     }
     
     public subscript (i: Int) -> String {
@@ -44,7 +45,7 @@ public extension String
     }
 
     public subscript (r: Range<Int>) -> String {
-        return substring(with: index(from: r.lowerBound)..<index(from: r.upperBound))
+        return substring(with: index(r.lowerBound)..<index(r.upperBound))
     }
     
     public func urlEncode() -> String? {
@@ -55,15 +56,15 @@ public extension String
         return (self.hasSuffix("/") ? self : self + "/") + (path.hasPrefix("/") ? path[1..<path.length] : path)
     }
 
-    public func splitOnFirst(separator:String) -> [String] {
-        return splitOnFirst(separator: separator, startIndex: 0)
+    public func splitOn(first:String) -> [String] {
+        return splitOn(first: first, startIndex: 0)
     }
     
-    public func splitOnFirst(separator:String, startIndex:Int) -> [String] {
+    public func splitOn(first:String, startIndex:Int) -> [String] {
         var to = [String]()
         
-        let startRange = index(from: startIndex)
-        if let range = self.range(of: separator,
+        let startRange = index(startIndex)
+        if let range = self.range(of: first,
             options: NSString.CompareOptions.literal,
             range: startRange ..< self.endIndex)
         {
@@ -76,9 +77,9 @@ public extension String
         return to
     }
     
-    public func splitOnLast(separator:String) -> [String] {
+    public func splitOn(last:String) -> [String] {
         var to = [String]()
-        if let range = self.range(of: separator, options:NSString.CompareOptions.backwards) {
+        if let range = self.range(of: last, options:NSString.CompareOptions.backwards) {
             to.append(self[startIndex..<range.lowerBound])
             to.append(self[range.upperBound..<endIndex])
         }
@@ -88,25 +89,25 @@ public extension String
         return to
     }
     
-    public func split(separator:String) -> [String] {
+    public func split(_ separator:String) -> [String] {
         return self.components(separatedBy: separator)
     }
     
-    public func indexOf(needle:String) -> Int {
+    public func indexOf(_ needle:String) -> Int {
         if let range = self.range(of: needle) {
             return self.distance(from: startIndex, to: range.lowerBound)
         }
         return -1
     }
     
-    public func lastIndexOf(needle:String) -> Int {
+    public func lastIndexOf(_ needle:String) -> Int {
         if let range = self.range(of: needle, options:NSString.CompareOptions.backwards) {
             return self.distance(from: startIndex, to: range.lowerBound)
         }
         return -1
     }
     
-    public func replace(needle:String, withString:String) -> String {
+    public func replace(_ needle:String, withString:String) -> String {
         return self.replacingOccurrences(of: needle, with: withString)
     }
     

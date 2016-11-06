@@ -24,52 +24,52 @@ public protocol IPatch {}
 
 public protocol ServiceClient
 {
-    func get<T : IReturn>(request:T) throws -> T.Return where T : JsonSerializable
-    func get<T : IReturnVoid>(request:T) throws -> Void where T : JsonSerializable
-    func get<T : IReturn>(request:T, query:[String:String]) throws -> T.Return where T : JsonSerializable
-    func get<T : JsonSerializable>(relativeUrl:String) throws -> T
-    func getAsync<T : IReturn>(request:T) -> Promise<T.Return> where T : JsonSerializable
-    func getAsync<T : IReturnVoid>(request:T) -> Promise<Void> where T : JsonSerializable
-    func getAsync<T : IReturn>(request:T, query:[String:String]) -> Promise<T.Return> where T : JsonSerializable
-    func getAsync<T : JsonSerializable>(relativeUrl:String) -> Promise<T>
+    func get<T : IReturn>(_ request:T) throws -> T.Return where T : JsonSerializable
+    func get<T : IReturnVoid>(_ request:T) throws -> Void where T : JsonSerializable
+    func get<T : IReturn>(_ request:T, query:[String:String]) throws -> T.Return where T : JsonSerializable
+    func get<T : JsonSerializable>(_ relativeUrl:String) throws -> T
+    func getAsync<T : IReturn>(_ request:T) -> Promise<T.Return> where T : JsonSerializable
+    func getAsync<T : IReturnVoid>(_ request:T) -> Promise<Void> where T : JsonSerializable
+    func getAsync<T : IReturn>(_ request:T, query:[String:String]) -> Promise<T.Return> where T : JsonSerializable
+    func getAsync<T : JsonSerializable>(_ relativeUrl:String) -> Promise<T>
     
-    func post<T : IReturn>(request:T) throws -> T.Return where T : JsonSerializable
-    func post<T : IReturnVoid>(request:T) throws -> Void where T : JsonSerializable
-    func post<Response : JsonSerializable, Request:JsonSerializable>(relativeUrl:String, request:Request?) throws -> Response
-    func postAsync<T : IReturn>(request:T) -> Promise<T.Return> where T : JsonSerializable
-    func postAsync<T : IReturnVoid>(request:T) -> Promise<Void> where T : JsonSerializable
-    func postAsync<Response : JsonSerializable, Request:JsonSerializable>(relativeUrl:String, request:Request?) -> Promise<Response>
+    func post<T : IReturn>(_ request:T) throws -> T.Return where T : JsonSerializable
+    func post<T : IReturnVoid>(_ request:T) throws -> Void where T : JsonSerializable
+    func post<Response : JsonSerializable, Request:JsonSerializable>(_ relativeUrl:String, request:Request?) throws -> Response
+    func postAsync<T : IReturn>(_ request:T) -> Promise<T.Return> where T : JsonSerializable
+    func postAsync<T : IReturnVoid>(_ request:T) -> Promise<Void> where T : JsonSerializable
+    func postAsync<Response : JsonSerializable, Request:JsonSerializable>(_ relativeUrl:String, request:Request?) -> Promise<Response>
     
-    func put<T : IReturn>(request:T) throws -> T.Return where T : JsonSerializable
-    func put<T : IReturnVoid>(request:T) throws -> Void where T : JsonSerializable
-    func put<Response : JsonSerializable, Request:JsonSerializable>(relativeUrl:String, request:Request?) throws -> Response
-    func putAsync<T : IReturn>(request:T) -> Promise<T.Return> where T : JsonSerializable
-    func putAsync<T : IReturnVoid>(request:T) -> Promise<Void> where T : JsonSerializable
-    func putAsync<Response : JsonSerializable, Request:JsonSerializable>(relativeUrl:String, request:Request?) -> Promise<Response>
+    func put<T : IReturn>(_ request:T) throws -> T.Return where T : JsonSerializable
+    func put<T : IReturnVoid>(_ request:T) throws -> Void where T : JsonSerializable
+    func put<Response : JsonSerializable, Request:JsonSerializable>(_ relativeUrl:String, request:Request?) throws -> Response
+    func putAsync<T : IReturn>(_ request:T) -> Promise<T.Return> where T : JsonSerializable
+    func putAsync<T : IReturnVoid>(_ request:T) -> Promise<Void> where T : JsonSerializable
+    func putAsync<Response : JsonSerializable, Request:JsonSerializable>(_ relativeUrl:String, request:Request?) -> Promise<Response>
     
-    func delete<T : IReturn>(request:T) throws -> T.Return where T : JsonSerializable
-    func delete<T : IReturnVoid>(request:T) throws -> Void where T : JsonSerializable
-    func delete<T : IReturn>(request:T, query:[String:String]) throws -> T.Return where T : JsonSerializable
-    func delete<T : JsonSerializable>(relativeUrl:String) throws -> T
-    func deleteAsync<T : IReturn>(request:T) -> Promise<T.Return> where T : JsonSerializable
-    func deleteAsync<T : IReturnVoid>(request:T) -> Promise<Void> where T : JsonSerializable
-    func deleteAsync<T : IReturn>(request:T, query:[String:String]) -> Promise<T.Return> where T : JsonSerializable
-    func deleteAsync<T : JsonSerializable>(relativeUrl:String) -> Promise<T>
+    func delete<T : IReturn>(_ request:T) throws -> T.Return where T : JsonSerializable
+    func delete<T : IReturnVoid>(_ request:T) throws -> Void where T : JsonSerializable
+    func delete<T : IReturn>(_ request:T, query:[String:String]) throws -> T.Return where T : JsonSerializable
+    func delete<T : JsonSerializable>(_ relativeUrl:String) throws -> T
+    func deleteAsync<T : IReturn>(_ request:T) -> Promise<T.Return> where T : JsonSerializable
+    func deleteAsync<T : IReturnVoid>(_ request:T) -> Promise<Void> where T : JsonSerializable
+    func deleteAsync<T : IReturn>(_ request:T, query:[String:String]) -> Promise<T.Return> where T : JsonSerializable
+    func deleteAsync<T : JsonSerializable>(_ relativeUrl:String) -> Promise<T>
     
-    func patch<T : IReturn>(request:T) throws -> T.Return where T : JsonSerializable
-    func patch<T : IReturnVoid>(request:T) throws -> Void where T : JsonSerializable
-    func patch<Response : JsonSerializable, Request:JsonSerializable>(relativeUrl:String, request:Request?) throws -> Response
-    func patchAsync<T : IReturn>(request:T) -> Promise<T.Return> where T : JsonSerializable
-    func patchAsync<T : IReturnVoid>(request:T) -> Promise<Void> where T : JsonSerializable
-    func patchAsync<Response : JsonSerializable, Request:JsonSerializable>(relativeUrl:String, request:Request?) -> Promise<Response>
+    func patch<T : IReturn>(_ request:T) throws -> T.Return where T : JsonSerializable
+    func patch<T : IReturnVoid>(_ request:T) throws -> Void where T : JsonSerializable
+    func patch<Response : JsonSerializable, Request:JsonSerializable>(_ relativeUrl:String, request:Request?) throws -> Response
+    func patchAsync<T : IReturn>(_ request:T) -> Promise<T.Return> where T : JsonSerializable
+    func patchAsync<T : IReturnVoid>(_ request:T) -> Promise<Void> where T : JsonSerializable
+    func patchAsync<Response : JsonSerializable, Request:JsonSerializable>(_ relativeUrl:String, request:Request?) -> Promise<Response>
     
-    func send<T : IReturn>(request:T) throws -> T.Return where T : JsonSerializable
-    func send<T : IReturnVoid>(request:T) throws -> Void where T : JsonSerializable
+    func send<T : IReturn>(_ request:T) throws -> T.Return where T : JsonSerializable
+    func send<T : IReturnVoid>(_ request:T) throws -> Void where T : JsonSerializable
     func send<T : JsonSerializable>(intoResponse:T, request:NSMutableURLRequest) throws -> T
     func sendAsync<T : JsonSerializable>(intoResponse:T, request:NSMutableURLRequest) -> Promise<T>
     
-    func getData(url:String) throws -> Data
-    func getDataAsync(url:String) -> Promise<Data>
+    func getData(_ url:String) throws -> Data
+    func getDataAsync(_ url:String) -> Promise<Data>
 }
 
 public class JsonServiceClient : ServiceClient
@@ -339,7 +339,7 @@ public class JsonServiceClient : ServiceClient
               HttpMethods.Post;
     }
     
-    public func send<T : IReturn>(request:T) throws -> T.Return where T : JsonSerializable {
+    public func send<T : IReturn>(_ request:T) throws -> T.Return where T : JsonSerializable {
         let httpMethod = getSendMethod(request)
         if hasRequestBody(httpMethod: httpMethod) {
             return try send(intoResponse: T.Return(), request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:httpMethod, request:request))
@@ -349,7 +349,7 @@ public class JsonServiceClient : ServiceClient
         
     }
     
-    public func send<T : IReturnVoid>(request:T) throws where T : JsonSerializable {
+    public func send<T : IReturnVoid>(_ request:T) throws where T : JsonSerializable {
         let httpMethod = getSendMethod(request)
         if hasRequestBody(httpMethod: httpMethod) {
             try send(intoResponse: ReturnVoid.void, request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:httpMethod, request:request))
@@ -359,14 +359,14 @@ public class JsonServiceClient : ServiceClient
         }
     }
     
-    public func sendAsync<T : IReturn>(request:T) -> Promise<T.Return> where T : JsonSerializable {
+    public func sendAsync<T : IReturn>(_ request:T) -> Promise<T.Return> where T : JsonSerializable {
         let httpMethod = getSendMethod(request)
         return hasRequestBody(httpMethod: httpMethod)
             ? sendAsync(intoResponse: T.Return(), request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:httpMethod, request:request))
             : sendAsync(intoResponse: T.Return(), request: self.createRequest(url: self.createUrl(dto: request), httpMethod:httpMethod))
     }
     
-    public func sendAsync<T : IReturnVoid>(request:T) -> Promise<Void> where T : JsonSerializable {
+    public func sendAsync<T : IReturnVoid>(_ request:T) -> Promise<Void> where T : JsonSerializable {
         let httpMethod = getSendMethod(request)
         return hasRequestBody(httpMethod: httpMethod)
             ? sendAsync(intoResponse: ReturnVoid.void, request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:HttpMethods.Post, request:request))
@@ -376,153 +376,153 @@ public class JsonServiceClient : ServiceClient
     }
    
     
-    public func get<T : IReturn>(request:T) throws -> T.Return where T : JsonSerializable {
+    public func get<T : IReturn>(_ request:T) throws -> T.Return where T : JsonSerializable {
         return try send(intoResponse: T.Return(), request: self.createRequest(url: self.createUrl(dto: request), httpMethod:HttpMethods.Get))
     }
     
-    public func get<T : IReturnVoid>(request:T) throws -> Void where T : JsonSerializable {
+    public func get<T : IReturnVoid>(_ request:T) throws -> Void where T : JsonSerializable {
         try send(intoResponse: ReturnVoid.void, request: self.createRequest(url: self.createUrl(dto: request), httpMethod:HttpMethods.Get))
     }
     
-    public func get<T : IReturn>(request:T, query:[String:String]) throws -> T.Return where T : JsonSerializable {
+    public func get<T : IReturn>(_ request:T, query:[String:String]) throws -> T.Return where T : JsonSerializable {
         return try send(intoResponse: T.Return(), request: self.createRequest(url: self.createUrl(dto: request, query:query), httpMethod:HttpMethods.Get))
     }
     
-    public func get<T : JsonSerializable>(relativeUrl:String) throws -> T {
+    public func get<T : JsonSerializable>(_ relativeUrl:String) throws -> T {
         return try send(intoResponse: T(), request: self.createRequest(url: resolveUrl(relativeUrl), httpMethod:HttpMethods.Get))
     }
     
-    public func getAsync<T : IReturn>(request:T) -> Promise<T.Return> where T : JsonSerializable {
+    public func getAsync<T : IReturn>(_ request:T) -> Promise<T.Return> where T : JsonSerializable {
         return sendAsync(intoResponse: T.Return(), request: self.createRequest(url: self.createUrl(dto: request), httpMethod:HttpMethods.Get))
     }
     
-    public func getAsync<T : IReturnVoid>(request:T) -> Promise<Void> where T : JsonSerializable {
+    public func getAsync<T : IReturnVoid>(_ request:T) -> Promise<Void> where T : JsonSerializable {
         return sendAsync(intoResponse: ReturnVoid.void, request: self.createRequest(url: self.createUrl(dto: request), httpMethod:HttpMethods.Get))
             .asVoid()
     }
     
-    public func getAsync<T : IReturn>(request:T, query:[String:String]) -> Promise<T.Return> where T : JsonSerializable {
+    public func getAsync<T : IReturn>(_ request:T, query:[String:String]) -> Promise<T.Return> where T : JsonSerializable {
         return sendAsync(intoResponse: T.Return(), request: self.createRequest(url: self.createUrl(dto: request, query:query), httpMethod:HttpMethods.Get))
     }
     
-    public func getAsync<T : JsonSerializable>(relativeUrl:String) -> Promise<T> {
+    public func getAsync<T : JsonSerializable>(_ relativeUrl:String) -> Promise<T> {
         return sendAsync(intoResponse: T(), request: self.createRequest(url: resolveUrl(relativeUrl), httpMethod:HttpMethods.Get))
     }
     
     
-    public func post<T : IReturn>(request:T) throws -> T.Return where T : JsonSerializable {
+    public func post<T : IReturn>(_ request:T) throws -> T.Return where T : JsonSerializable {
         return try send(intoResponse: T.Return(), request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:HttpMethods.Post, request:request))
     }
     
-    public func post<T : IReturnVoid>(request:T) throws -> Void where T : JsonSerializable {
+    public func post<T : IReturnVoid>(_ request:T) throws -> Void where T : JsonSerializable {
         try send(intoResponse: ReturnVoid.void, request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:HttpMethods.Post, request:request))
     }
     
-    public func post<Response : JsonSerializable, Request:JsonSerializable>(relativeUrl:String, request:Request?) throws -> Response {
+    public func post<Response : JsonSerializable, Request:JsonSerializable>(_ relativeUrl:String, request:Request?) throws -> Response {
         return try send(intoResponse: Response(), request: self.createRequestDto(url: resolveUrl(relativeUrl), httpMethod:HttpMethods.Post, request:request))
     }
     
-    public func postAsync<T : IReturn>(request:T) -> Promise<T.Return> where T : JsonSerializable {
+    public func postAsync<T : IReturn>(_ request:T) -> Promise<T.Return> where T : JsonSerializable {
         return sendAsync(intoResponse: T.Return(), request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:HttpMethods.Post, request:request))
     }
     
-    public func postAsync<T : IReturnVoid>(request:T) -> Promise<Void> where T : JsonSerializable {
+    public func postAsync<T : IReturnVoid>(_ request:T) -> Promise<Void> where T : JsonSerializable {
         return sendAsync(intoResponse: ReturnVoid.void, request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:HttpMethods.Post, request:request))
             .asVoid()
     }
     
-    public func postAsync<Response : JsonSerializable, Request:JsonSerializable>(relativeUrl:String, request:Request?) -> Promise<Response> {
+    public func postAsync<Response : JsonSerializable, Request:JsonSerializable>(_ relativeUrl:String, request:Request?) -> Promise<Response> {
         return sendAsync(intoResponse: Response(), request: self.createRequestDto(url: resolveUrl(relativeUrl), httpMethod:HttpMethods.Post, request:request))
     }
     
     
-    public func put<T : IReturn>(request:T) throws -> T.Return where T : JsonSerializable {
+    public func put<T : IReturn>(_ request:T) throws -> T.Return where T : JsonSerializable {
         return try send(intoResponse: T.Return(), request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:HttpMethods.Put, request:request))
     }
     
-    public func put<T : IReturnVoid>(request:T) throws -> Void where T : JsonSerializable {
+    public func put<T : IReturnVoid>(_ request:T) throws -> Void where T : JsonSerializable {
         try send(intoResponse: ReturnVoid.void, request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:HttpMethods.Put, request:request))
     }
     
-    public func put<Response : JsonSerializable, Request:JsonSerializable>(relativeUrl:String, request:Request?) throws -> Response {
+    public func put<Response : JsonSerializable, Request:JsonSerializable>(_ relativeUrl:String, request:Request?) throws -> Response {
         return try send(intoResponse: Response(), request: self.createRequestDto(url: resolveUrl(relativeUrl), httpMethod:HttpMethods.Put, request:request))
     }
     
-    public func putAsync<T : IReturn>(request:T) -> Promise<T.Return> where T : JsonSerializable {
+    public func putAsync<T : IReturn>(_ request:T) -> Promise<T.Return> where T : JsonSerializable {
         return sendAsync(intoResponse: T.Return(), request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:HttpMethods.Put, request:request))
     }
     
-    public func putAsync<T : IReturnVoid>(request:T) -> Promise<Void> where T : JsonSerializable {
+    public func putAsync<T : IReturnVoid>(_ request:T) -> Promise<Void> where T : JsonSerializable {
         return sendAsync(intoResponse: ReturnVoid.void, request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:HttpMethods.Put, request:request))
             .asVoid()
     }
     
-    public func putAsync<Response : JsonSerializable, Request:JsonSerializable>(relativeUrl:String, request:Request?) -> Promise<Response> {
+    public func putAsync<Response : JsonSerializable, Request:JsonSerializable>(_ relativeUrl:String, request:Request?) -> Promise<Response> {
         return sendAsync(intoResponse: Response(), request: self.createRequestDto(url: resolveUrl(relativeUrl), httpMethod:HttpMethods.Put, request:request))
     }
     
     
-    public func delete<T : IReturn>(request:T) throws -> T.Return where T : JsonSerializable {
+    public func delete<T : IReturn>(_ request:T) throws -> T.Return where T : JsonSerializable {
         return try send(intoResponse: T.Return(), request: self.createRequest(url: self.createUrl(dto: request), httpMethod:HttpMethods.Delete))
     }
     
-    public func delete<T : IReturnVoid>(request:T) throws -> Void where T : JsonSerializable {
+    public func delete<T : IReturnVoid>(_ request:T) throws -> Void where T : JsonSerializable {
         try send(intoResponse: ReturnVoid.void, request: self.createRequest(url: self.createUrl(dto: request), httpMethod:HttpMethods.Delete))
     }
     
-    public func delete<T : IReturn>(request:T, query:[String:String]) throws -> T.Return where T : JsonSerializable {
+    public func delete<T : IReturn>(_ request:T, query:[String:String]) throws -> T.Return where T : JsonSerializable {
         return try send(intoResponse: T.Return(), request: self.createRequest(url: self.createUrl(dto: request, query:query), httpMethod:HttpMethods.Delete))
     }
     
-    public func delete<T : JsonSerializable>(relativeUrl:String) throws -> T {
+    public func delete<T : JsonSerializable>(_ relativeUrl:String) throws -> T {
         return try send(intoResponse: T(), request: self.createRequest(url: resolveUrl(relativeUrl), httpMethod:HttpMethods.Delete))
     }
     
-    public func deleteAsync<T : IReturn>(request:T) -> Promise<T.Return> where T : JsonSerializable {
+    public func deleteAsync<T : IReturn>(_ request:T) -> Promise<T.Return> where T : JsonSerializable {
         return sendAsync(intoResponse: T.Return(), request: self.createRequest(url: self.createUrl(dto: request), httpMethod:HttpMethods.Delete))
     }
     
-    public func deleteAsync<T : IReturnVoid>(request:T) -> Promise<Void> where T : JsonSerializable {
+    public func deleteAsync<T : IReturnVoid>(_ request:T) -> Promise<Void> where T : JsonSerializable {
         return sendAsync(intoResponse: ReturnVoid.void, request: self.createRequest(url: self.createUrl(dto: request), httpMethod:HttpMethods.Delete))
             .asVoid()
     }
     
-    public func deleteAsync<T : IReturn>(request:T, query:[String:String]) -> Promise<T.Return> where T : JsonSerializable {
+    public func deleteAsync<T : IReturn>(_ request:T, query:[String:String]) -> Promise<T.Return> where T : JsonSerializable {
         return sendAsync(intoResponse: T.Return(), request: self.createRequest(url: self.createUrl(dto: request, query:query), httpMethod:HttpMethods.Delete))
     }
     
-    public func deleteAsync<T : JsonSerializable>(relativeUrl:String) -> Promise<T> {
+    public func deleteAsync<T : JsonSerializable>(_ relativeUrl:String) -> Promise<T> {
         return sendAsync(intoResponse: T(), request: self.createRequest(url: resolveUrl(relativeUrl), httpMethod:HttpMethods.Delete))
     }
     
     
-    public func patch<T : IReturn>(request:T) throws -> T.Return where T : JsonSerializable {
+    public func patch<T : IReturn>(_ request:T) throws -> T.Return where T : JsonSerializable {
         return try send(intoResponse: T.Return(), request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:HttpMethods.Patch, request:request))
     }
     
-    public func patch<T : IReturnVoid>(request:T) throws -> Void where T : JsonSerializable {
+    public func patch<T : IReturnVoid>(_ request:T) throws -> Void where T : JsonSerializable {
         try send(intoResponse: ReturnVoid.void, request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:HttpMethods.Patch, request:request))
     }
     
-    public func patch<Response : JsonSerializable, Request:JsonSerializable>(relativeUrl:String, request:Request?) throws -> Response {
+    public func patch<Response : JsonSerializable, Request:JsonSerializable>(_ relativeUrl:String, request:Request?) throws -> Response {
         return try send(intoResponse: Response(), request: self.createRequestDto(url: resolveUrl(relativeUrl), httpMethod:HttpMethods.Patch, request:request))
     }
     
-    public func patchAsync<T : IReturn>(request:T) -> Promise<T.Return> where T : JsonSerializable {
+    public func patchAsync<T : IReturn>(_ request:T) -> Promise<T.Return> where T : JsonSerializable {
         return sendAsync(intoResponse: T.Return(), request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:HttpMethods.Patch, request:request))
     }
     
-    public func patchAsync<T : IReturnVoid>(request:T) -> Promise<Void> where T : JsonSerializable {
+    public func patchAsync<T : IReturnVoid>(_ request:T) -> Promise<Void> where T : JsonSerializable {
         return sendAsync(intoResponse: ReturnVoid.void, request: self.createRequestDto(url: replyUrl.combinePath(T.typeName), httpMethod:HttpMethods.Patch, request:request))
             .asVoid()
     }
     
-    public func patchAsync<Response : JsonSerializable, Request:JsonSerializable>(relativeUrl:String, request:Request?) -> Promise<Response> {
+    public func patchAsync<Response : JsonSerializable, Request:JsonSerializable>(_ relativeUrl:String, request:Request?) -> Promise<Response> {
         return sendAsync(intoResponse: Response(), request: self.createRequestDto(url: resolveUrl(relativeUrl), httpMethod:HttpMethods.Patch, request:request))
     }
     
     
-    public func getData(url:String) throws -> Data {
+    public func getData(_ url:String) throws -> Data {
         var error: NSError! = NSError(domain: "Migrator", code: 0, userInfo: nil)
         var response:URLResponse? = nil
         do {
@@ -534,7 +534,7 @@ public class JsonServiceClient : ServiceClient
         throw error
     }
     
-    public func getDataAsync(url:String) -> Promise<Data> {
+    public func getDataAsync(_ url:String) -> Promise<Data> {
         return Promise<Data> { (complete, reject) in
             let task = self.createSession().dataTask(with: URL(string: self.resolveUrl(url))!) { (data, response, error) in
                 if error != nil {

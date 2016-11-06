@@ -12,7 +12,7 @@ import XCTest
 @testable import ServiceStackClient
 
 
-func assertEquals<T : Equatable>(expected:[T], actual:[T]) {
+func assertEquals<T : Equatable>(_ expected:[T], actual:[T]) {
     XCTAssertEqual(expected.count, actual.count)
     
     for i in 0..<actual.count {

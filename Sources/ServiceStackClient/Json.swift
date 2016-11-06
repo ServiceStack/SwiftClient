@@ -292,16 +292,16 @@ extension Date : StringSerializable
             : string
         let wcfJsonPrefix = "/Date("
         if str.hasPrefix(wcfJsonPrefix) {
-            let body = str.splitOnFirst(separator: "(")[1].splitOnLast(separator: ")")[0]
+            let body = str.splitOn(first: "(")[1].splitOn(last: ")")[0]
             let unixTime = (
                 body
-                    .splitOnFirst(separator: "-", startIndex:1)[0]
-                    .splitOnFirst(separator: "+", startIndex:1)[0] as NSString
+                    .splitOn(first: "-", startIndex:1)[0]
+                    .splitOn(first: "+", startIndex:1)[0] as NSString
             ).doubleValue
             return Date(timeIntervalSince1970: unixTime / 1000) //ms -> secs
         }
         
-        return Date.fromIsoDateString(string: string)
+        return Date.fromIsoDateString(string)
     }
     
     public static func fromObject(_ any:Any) -> Date?
@@ -403,11 +403,11 @@ extension TimeInterval
         var seconds = 0
         var ms = 0.0
   
-        let t = string[1..<string.length].splitOnFirst(separator: "T") //strip P
+        let t = string[1..<string.length].splitOn(first: "T") //strip P
         
         let hasTime = t.count == 2
         
-        let d = t[0].splitOnFirst(separator: "D")
+        let d = t[0].splitOn(first: "D")
         if d.count == 2 {
             if let day = Int(d[0]) {
                 days = day
@@ -415,21 +415,21 @@ extension TimeInterval
         }
 
         if hasTime {
-            let h = t[1].splitOnFirst(separator: "H")
+            let h = t[1].splitOn(first: "H")
             if h.count == 2 {
                 if let hour = Int(h[0]) {
                     hours = hour
                 }
             }
             
-            let m = h.last!.splitOnFirst(separator: "M")
+            let m = h.last!.splitOn(first: "M")
             if m.count == 2 {
                 if let min = Int(m[0]) {
                     minutes = min
                 }
             }
             
-            let s = m.last!.splitOnFirst(separator: "S")
+            let s = m.last!.splitOn(first: "S")
             if s.count == 2 {
                 ms = s[0].toDouble()
             }
