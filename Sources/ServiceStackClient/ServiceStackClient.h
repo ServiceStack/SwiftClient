@@ -2,11 +2,11 @@
 //  ServiceStackClient.h
 //  ServiceStackClient
 //
-//  Created by Demis Bellot on 11/6/16.
+//  Created by Demis Bellot on 11/5/16.
 //
 //
 
-#import <UIKit/UIKit.h>
+//#import <UIKit/UIKit.h>
 
 //! Project version number for ServiceStackClient.
 FOUNDATION_EXPORT double ServiceStackClientVersionNumber;
