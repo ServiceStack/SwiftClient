@@ -18,6 +18,8 @@
 		51D0C3FF1DCF93AB0054C26D /* JsonServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C3F11DCF93A20054C26D /* JsonServiceClient.swift */; };
 		51D0C4011DCF93AB0054C26D /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C3F31DCF93A20054C26D /* StringExtensions.swift */; };
 		51D0C4061DCF99180054C26D /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* PromiseKit.framework */; };
+		51D0C40B1DCFD6170054C26D /* AssertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C4071DCFD4810054C26D /* AssertUtils.swift */; };
+		51D0C40C1DCFD61B0054C26D /* DateExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C4081DCFD4810054C26D /* DateExtensionsTests.swift */; };
 		OBJ_29 /* after.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* after.swift */; };
 		OBJ_30 /* DispatchQueue+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* DispatchQueue+Promise.swift */; };
 		OBJ_31 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Error.swift */; };
@@ -55,6 +57,8 @@
 		51D0C3F11DCF93A20054C26D /* JsonServiceClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonServiceClient.swift; path = ServiceStackClient/JsonServiceClient.swift; sourceTree = "<group>"; };
 		51D0C3F31DCF93A20054C26D /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = ServiceStackClient/StringExtensions.swift; sourceTree = "<group>"; };
 		51D0C4041DCF94E40054C26D /* ServiceStackClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceStackClient.h; path = ServiceStackClient/ServiceStackClient.h; sourceTree = "<group>"; };
+		51D0C4071DCFD4810054C26D /* AssertUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssertUtils.swift; path = ServiceStackClientTests/AssertUtils.swift; sourceTree = "<group>"; };
+		51D0C4081DCFD4810054C26D /* DateExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensionsTests.swift; path = ServiceStackClientTests/DateExtensionsTests.swift; sourceTree = "<group>"; };
 		OBJ_10 /* DispatchQueue+Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Promise.swift"; sourceTree = "<group>"; };
 		OBJ_11 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		OBJ_12 /* join.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = join.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 		51D0C3E51DCF92DB0054C26D /* ServiceStackClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				51D0C4071DCFD4810054C26D /* AssertUtils.swift */,
+				51D0C4081DCFD4810054C26D /* DateExtensionsTests.swift */,
 				51D0C3E81DCF92F40054C26D /* Info.plist */,
 				51D0C3E61DCF92EC0054C26D /* ServiceStackClientTests.swift */,
 			);
@@ -321,6 +327,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				51D0C3E91DCF92FD0054C26D /* ServiceStackClientTests.swift in Sources */,
+				51D0C40B1DCFD6170054C26D /* AssertUtils.swift in Sources */,
+				51D0C40C1DCFD61B0054C26D /* DateExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +512,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -560,7 +568,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

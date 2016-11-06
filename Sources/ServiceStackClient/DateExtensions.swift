@@ -9,9 +9,9 @@
 import Foundation
 import PromiseKit
 
-public extension NSDate {
+public extension Date {
     
-    public convenience init(dateString:String, format:String="yyyy-MM-dd") {
+    public init(dateString:String, format:String="yyyy-MM-dd") {
         let fmt = DateFormatter()
         fmt.timeZone = NSTimeZone.default
         fmt.dateFormat = format
@@ -19,7 +19,7 @@ public extension NSDate {
         self.init(timeInterval:0, since:d!)
     }
     
-    public convenience init(year:Int, month:Int, day:Int) {
+    public init(year:Int, month:Int, day:Int) {
         let c = NSDateComponents()
         c.year = year
         c.month = month
@@ -30,24 +30,24 @@ public extension NSDate {
         self.init(timeInterval:0, since:d!)
     }
     
-    public func components() -> NSDateComponents {
+    public func components() -> DateComponents {
         let components  = NSCalendar.current.dateComponents(
             [Calendar.Component.day, Calendar.Component.month, Calendar.Component.year],
             from: self as Date)
         
-        return components as NSDateComponents
+        return components
     }
     
     public var year:Int {
-        return components().year
+        return components().year!
     }
     
     public var month:Int {
-        return components().month
+        return components().month!
     }
     
     public var day:Int {
-        return components().day
+        return components().day!
     }
     
     public var shortDateString:String {
@@ -77,7 +77,7 @@ public extension NSDate {
         return dateFormatter.string(from: self as Date).appendingFormat("Z")
     }
     
-    public class func fromIsoDateString(string:String) -> NSDate? {
+    public static func fromIsoDateString(string:String) -> Date? {
         let isUtc = string.hasSuffix("Z")
         let dateFormatter = DateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
@@ -87,8 +87,8 @@ public extension NSDate {
             : "yyyy-MM-dd'T'HH:mm:ss.SSSSSSS"
         
         return isUtc
-            ? dateFormatter.date(from: string[0..<string.length-1]) as NSDate?
-            : dateFormatter.date(from: string) as NSDate?
+            ? dateFormatter.date(from: string[0..<string.length-1])
+            : dateFormatter.date(from: string)
     }
 }
 

@@ -274,9 +274,9 @@ extension Character : StringSerializable
     }
 }
 
-extension NSDate : StringSerializable
+extension Date : StringSerializable
 {
-    public class var typeName:String { return "NSDate" }
+    public static var typeName:String { return "Date" }
     
     public func toString() -> String {
         return self.dateAndTimeString
@@ -286,7 +286,7 @@ extension NSDate : StringSerializable
         return jsonString(self.jsonDate)
     }
     
-    public class func fromString(_ string: String) -> NSDate? {
+    public static func fromString(_ string: String) -> Date? {
         let str = string.hasPrefix("\\")
             ? string[1..<string.length]
             : string
@@ -298,17 +298,17 @@ extension NSDate : StringSerializable
                     .splitOnFirst(separator: "-", startIndex:1)[0]
                     .splitOnFirst(separator: "+", startIndex:1)[0] as NSString
             ).doubleValue
-            return NSDate(timeIntervalSince1970: unixTime / 1000) //ms -> secs
+            return Date(timeIntervalSince1970: unixTime / 1000) //ms -> secs
         }
         
-        return NSDate.fromIsoDateString(string: string)
+        return Date.fromIsoDateString(string: string)
     }
     
-    public class func fromObject(_ any:Any) -> NSDate?
+    public static func fromObject(_ any:Any) -> Date?
     {
         switch any {
         case let s as String: return fromString(s)
-        case let d as NSDate: return d
+        case let d as Date: return d
         default:return nil
         }
     }
