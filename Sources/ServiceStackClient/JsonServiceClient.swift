@@ -182,7 +182,7 @@ public class JsonServiceClient : ServiceClient
             Global.responseFilter!(response)
         }
         
-        if let json = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) {
+        if let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
             if let dto = Type<T>.fromJson(instance: intoResponse, json: json as String) {
                 return dto
             }

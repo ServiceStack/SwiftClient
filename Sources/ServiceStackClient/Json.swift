@@ -201,17 +201,51 @@ extension HttpWebResponse : JsonSerializable
         return ""
     }
     
-    public static func fromJson(_ json:String) -> NSString? {
+    public static func fromJson(_ json:String) -> HttpWebResponse? {
         return nil
     }
     
-    public static func fromString(_ string: String) -> NSString? {
+    public static func fromString(_ string: String) -> HttpWebResponse? {
         return nil
     }
     
-    public static func fromObject(_ any:Any) -> NSString?
+    public static func fromObject(_ any:Any) -> HttpWebResponse?
     {
         return nil
+    }
+}
+
+extension Data : JsonSerializable
+{
+    public static let void = Data()
+    
+    public static var typeName:String { return "Data" }
+    
+    public static var metadata:Metadata = Metadata.create([])
+    
+    public func toString() -> String {
+        return NSString(data: self, encoding: String.Encoding.utf8.rawValue) as! String
+    }
+    
+    public func toJson() -> String {
+        return toString()
+    }
+    
+    public static func fromJson(_ json:String) -> Data? {
+        return fromString(json)
+    }
+    
+    public static func fromString(_ string: String) -> Data? {
+        return string.data(using: String.Encoding.utf8)
+    }
+    
+    public static func fromObject(_ any:Any) -> Data?
+    {
+        switch any {
+        case let d as Data: return d
+        case let s as String: return fromString(s)
+        default:return nil
+        }
     }
 }
 

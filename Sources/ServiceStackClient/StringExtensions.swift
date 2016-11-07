@@ -156,14 +156,14 @@ extension Data
     }
 }
 
-extension NSError
+extension Error
 {
     func convertUserInfo<T : JsonSerializable>() -> T? {
         return self.populateUserInfo(instance: T())
     }
 
     func populateUserInfo<T : JsonSerializable>(instance:T) -> T? {
-        let to = populateFromDictionary(instance: T(), map: self.userInfo, propertiesMap: T.propertyMap)
+        let to = populateFromDictionary(instance: T(), map: (self as NSError).userInfo, propertiesMap: T.propertyMap)
         return to
     }
 }

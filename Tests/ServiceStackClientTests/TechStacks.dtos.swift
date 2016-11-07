@@ -1,23 +1,23 @@
 /* Options:
- Date: 2016-11-06 22:51:55
- SwiftVersion: 2.0
- Version: 4.55
- Tip: To override a DTO option, remove "//" prefix before updating
- BaseUrl: http://techstacks.io
- 
- //BaseClass:
- //AddModelExtensions: True
- //AddServiceStackTypes: True
- //IncludeTypes:
- ExcludeTypes: QueryBase`1,QueryResponse,FindTechnologies,Authenticate,AuthenticateResponse,AssignRoles,AssignRolesResponse,UnAssignRoles,UnAssignRolesResponse,Ping
- //ExcludeGenericBaseTypes: True
- //AddResponseStatus: False
- //AddImplicitVersion:
- //AddDescriptionAsComments: True
- //InitializeCollections: True
- //TreatTypesAsStrings:
- //DefaultImports: Foundation,ServiceStackClient
- */
+Date: 2016-11-07 09:01:14
+SwiftVersion: 3.0
+Version: 4.55
+Tip: To override a DTO option, remove "//" prefix before updating
+BaseUrl: http://techstacks.io
+
+//BaseClass: 
+//AddModelExtensions: True
+//AddServiceStackTypes: True
+//IncludeTypes: 
+ExcludeTypes: QueryBase,QueryDb`1,QueryResponse`1,FindTechnologies,Authenticate,AuthenticateResponse,AssignRoles,AssignRolesResponse,UnAssignRoles,UnAssignRolesResponse,Ping
+//ExcludeGenericBaseTypes: True
+//AddResponseStatus: False
+//AddImplicitVersion: 
+//AddDescriptionAsComments: True
+//InitializeCollections: True
+//TreatTypesAsStrings: 
+//DefaultImports: Foundation,ServiceStackClient
+*/
 
 import Foundation;
 import ServiceStackClient;
@@ -26,7 +26,7 @@ import ServiceStackClient;
 public class LogoUrlApproval : IReturn
 {
     public typealias Return = LogoUrlApprovalResponse
-    
+
     required public init(){}
     public var technologyId:Int64?
     public var approved:Bool?
@@ -36,7 +36,7 @@ public class LogoUrlApproval : IReturn
 public class LockTechStack : IReturn
 {
     public typealias Return = LockStackResponse
-    
+
     required public init(){}
     public var technologyStackId:Int64?
     public var isLocked:Bool?
@@ -46,7 +46,7 @@ public class LockTechStack : IReturn
 public class LockTech : IReturn
 {
     public typealias Return = LockStackResponse
-    
+
     required public init(){}
     public var technologyId:Int64?
     public var isLocked:Bool?
@@ -89,7 +89,7 @@ public class ClientUser
 public class CreateTechnology : IReturn
 {
     public typealias Return = CreateTechnologyResponse
-    
+
     required public init(){}
     public var name:String?
     public var vendorName:String?
@@ -105,7 +105,7 @@ public class CreateTechnology : IReturn
 public class UpdateTechnology : IReturn
 {
     public typealias Return = UpdateTechnologyResponse
-    
+
     required public init(){}
     public var id:Int64?
     public var name:String?
@@ -122,7 +122,7 @@ public class UpdateTechnology : IReturn
 public class DeleteTechnology : IReturn
 {
     public typealias Return = DeleteTechnologyResponse
-    
+
     required public init(){}
     public var id:Int64?
 }
@@ -131,7 +131,7 @@ public class DeleteTechnology : IReturn
 public class CreateTechnologyStack : IReturn
 {
     public typealias Return = CreateTechnologyStackResponse
-    
+
     required public init(){}
     public var name:String?
     public var vendorName:String?
@@ -147,7 +147,7 @@ public class CreateTechnologyStack : IReturn
 public class UpdateTechnologyStack : IReturn
 {
     public typealias Return = UpdateTechnologyStackResponse
-    
+
     required public init(){}
     public var id:Int64?
     public var name:String?
@@ -164,7 +164,7 @@ public class UpdateTechnologyStack : IReturn
 public class DeleteTechnologyStack : IReturn
 {
     public typealias Return = DeleteTechnologyStackResponse
-    
+
     required public init(){}
     public var id:Int64?
 }
@@ -179,7 +179,7 @@ public class SessionInfo
 public class GetTechnologyPreviousVersions : IReturn
 {
     public typealias Return = GetTechnologyPreviousVersionsResponse
-    
+
     required public init(){}
     public var slug:String?
 }
@@ -188,7 +188,7 @@ public class GetTechnologyPreviousVersions : IReturn
 public class GetAllTechnologies : IReturn
 {
     public typealias Return = GetAllTechnologiesResponse
-    
+
     required public init(){}
 }
 
@@ -196,7 +196,7 @@ public class GetAllTechnologies : IReturn
 public class GetTechnology : IReturn
 {
     public typealias Return = GetTechnologyResponse
-    
+
     required public init(){}
     public var slug:String?
 }
@@ -205,7 +205,7 @@ public class GetTechnology : IReturn
 public class GetTechnologyFavoriteDetails : IReturn
 {
     public typealias Return = GetTechnologyFavoriteDetailsResponse
-    
+
     required public init(){}
     public var slug:String?
 }
@@ -214,7 +214,7 @@ public class GetTechnologyFavoriteDetails : IReturn
 public class GetTechnologyStackPreviousVersions : IReturn
 {
     public typealias Return = GetTechnologyStackPreviousVersionsResponse
-    
+
     required public init(){}
     public var slug:String?
 }
@@ -223,7 +223,7 @@ public class GetTechnologyStackPreviousVersions : IReturn
 public class GetPageStats : IReturn
 {
     public typealias Return = GetPageStatsResponse
-    
+
     required public init(){}
     public var type:String?
     public var slug:String?
@@ -234,7 +234,7 @@ public class GetPageStats : IReturn
 public class Overview : IReturn
 {
     public typealias Return = OverviewResponse
-    
+
     required public init(){}
     public var reload:Bool?
 }
@@ -243,7 +243,7 @@ public class Overview : IReturn
 public class AppOverview : IReturn
 {
     public typealias Return = AppOverviewResponse
-    
+
     required public init(){}
     public var reload:Bool?
 }
@@ -252,7 +252,7 @@ public class AppOverview : IReturn
 public class GetAllTechnologyStacks : IReturn
 {
     public typealias Return = GetAllTechnologyStacksResponse
-    
+
     required public init(){}
 }
 
@@ -260,7 +260,7 @@ public class GetAllTechnologyStacks : IReturn
 public class GetTechnologyStack : IReturn
 {
     public typealias Return = GetTechnologyStackResponse
-    
+
     required public init(){}
     public var slug:String?
 }
@@ -269,7 +269,7 @@ public class GetTechnologyStack : IReturn
 public class GetTechnologyStackFavoriteDetails : IReturn
 {
     public typealias Return = GetTechnologyStackFavoriteDetailsResponse
-    
+
     required public init(){}
     public var slug:String?
 }
@@ -278,7 +278,7 @@ public class GetTechnologyStackFavoriteDetails : IReturn
 public class GetConfig : IReturn
 {
     public typealias Return = GetConfigResponse
-    
+
     required public init(){}
 }
 
@@ -286,7 +286,7 @@ public class GetConfig : IReturn
 public class GetFavoriteTechStack : IReturn
 {
     public typealias Return = GetFavoriteTechStackResponse
-    
+
     required public init(){}
     public var technologyStackId:Int?
 }
@@ -295,7 +295,7 @@ public class GetFavoriteTechStack : IReturn
 public class AddFavoriteTechStack : IReturn
 {
     public typealias Return = FavoriteTechStackResponse
-    
+
     required public init(){}
     public var technologyStackId:Int?
 }
@@ -304,7 +304,7 @@ public class AddFavoriteTechStack : IReturn
 public class RemoveFavoriteTechStack : IReturn
 {
     public typealias Return = FavoriteTechStackResponse
-    
+
     required public init(){}
     public var technologyStackId:Int?
 }
@@ -313,7 +313,7 @@ public class RemoveFavoriteTechStack : IReturn
 public class GetFavoriteTechnologies : IReturn
 {
     public typealias Return = GetFavoriteTechnologiesResponse
-    
+
     required public init(){}
     public var technologyId:Int?
 }
@@ -322,7 +322,7 @@ public class GetFavoriteTechnologies : IReturn
 public class AddFavoriteTechnology : IReturn
 {
     public typealias Return = FavoriteTechnologyResponse
-    
+
     required public init(){}
     public var technologyId:Int?
 }
@@ -331,7 +331,7 @@ public class AddFavoriteTechnology : IReturn
 public class RemoveFavoriteTechnology : IReturn
 {
     public typealias Return = FavoriteTechnologyResponse
-    
+
     required public init(){}
     public var technologyId:Int?
 }
@@ -340,7 +340,7 @@ public class RemoveFavoriteTechnology : IReturn
 public class GetUserFeed : IReturn
 {
     public typealias Return = GetUserFeedResponse
-    
+
     required public init(){}
 }
 
@@ -348,7 +348,7 @@ public class GetUserFeed : IReturn
 public class GetUserInfo : IReturn
 {
     public typealias Return = GetUserInfoResponse
-    
+
     required public init(){}
     public var userName:String?
 }
@@ -358,7 +358,7 @@ public class GetUserInfo : IReturn
 public class ConvertSessionToToken : IReturn, IPost
 {
     public typealias Return = ConvertSessionToTokenResponse
-    
+
     required public init(){}
     // @DataMember(Order=1)
     public var preserveSession:Bool?
@@ -556,7 +556,7 @@ public class ConvertSessionToTokenResponse
     required public init(){}
     // @DataMember(Order=1)
     public var meta:[String:String] = [:]
-    
+
     // @DataMember(Order=2)
     public var responseStatus:ResponseStatus?
 }
@@ -591,11 +591,6 @@ public class TechnologyHistory : TechnologyBase
     required public init(){}
     public var technologyId:Int64?
     public var operation:String?
-}
-
-public class QueryDb<T : JsonSerializable> : QueryBase
-{
-    required public init(){}
 }
 
 public class TechnologyStack : TechnologyStackBase
@@ -635,10 +630,10 @@ public class Option
     required public init(){}
     // @DataMember(Name="name")
     public var name:String?
-    
+
     // @DataMember(Name="title")
     public var title:String?
-    
+
     // @DataMember(Name="value")
     public var value:TechnologyTier?
 }
@@ -693,38 +688,13 @@ public class TechnologyStackBase
     public var lastStatusUpdate:Date?
 }
 
-public class QueryBase
-{
-    required public init(){}
-    // @DataMember(Order=1)
-    public var skip:Int?
-    
-    // @DataMember(Order=2)
-    public var take:Int?
-    
-    // @DataMember(Order=3)
-    public var orderBy:String?
-    
-    // @DataMember(Order=4)
-    public var orderByDesc:String?
-    
-    // @DataMember(Order=5)
-    public var include:String?
-    
-    // @DataMember(Order=6)
-    public var fields:String?
-    
-    // @DataMember(Order=7)
-    public var meta:[String:String] = [:]
-}
-
 
 extension LogoUrlApproval : JsonSerializable
 {
     public static var typeName:String { return "LogoUrlApproval" }
     public static var metadata = Metadata.create([
-        Type<LogoUrlApproval>.optionalProperty("technologyId", get: { $0.technologyId }, set: { $0.technologyId = $1 }),
-        Type<LogoUrlApproval>.optionalProperty("approved", get: { $0.approved }, set: { $0.approved = $1 }),
+            Type<LogoUrlApproval>.optionalProperty("technologyId", get: { $0.technologyId }, set: { $0.technologyId = $1 }),
+            Type<LogoUrlApproval>.optionalProperty("approved", get: { $0.approved }, set: { $0.approved = $1 }),
         ])
 }
 
@@ -732,8 +702,8 @@ extension LockTechStack : JsonSerializable
 {
     public static var typeName:String { return "LockTechStack" }
     public static var metadata = Metadata.create([
-        Type<LockTechStack>.optionalProperty("technologyStackId", get: { $0.technologyStackId }, set: { $0.technologyStackId = $1 }),
-        Type<LockTechStack>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
+            Type<LockTechStack>.optionalProperty("technologyStackId", get: { $0.technologyStackId }, set: { $0.technologyStackId = $1 }),
+            Type<LockTechStack>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
         ])
 }
 
@@ -741,8 +711,8 @@ extension LockTech : JsonSerializable
 {
     public static var typeName:String { return "LockTech" }
     public static var metadata = Metadata.create([
-        Type<LockTech>.optionalProperty("technologyId", get: { $0.technologyId }, set: { $0.technologyId = $1 }),
-        Type<LockTech>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
+            Type<LockTech>.optionalProperty("technologyId", get: { $0.technologyId }, set: { $0.technologyId = $1 }),
+            Type<LockTech>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
         ])
 }
 
@@ -750,7 +720,7 @@ extension FallbackForClientRoutes : JsonSerializable
 {
     public static var typeName:String { return "FallbackForClientRoutes" }
     public static var metadata = Metadata.create([
-        Type<FallbackForClientRoutes>.optionalProperty("pathInfo", get: { $0.pathInfo }, set: { $0.pathInfo = $1 }),
+            Type<FallbackForClientRoutes>.optionalProperty("pathInfo", get: { $0.pathInfo }, set: { $0.pathInfo = $1 }),
         ])
 }
 
@@ -772,7 +742,7 @@ extension ClientTechnology : JsonSerializable
 {
     public static var typeName:String { return "ClientTechnology" }
     public static var metadata = Metadata.create([
-        Type<ClientTechnology>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<ClientTechnology>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
         ])
 }
 
@@ -780,7 +750,7 @@ extension ClientUser : JsonSerializable
 {
     public static var typeName:String { return "ClientUser" }
     public static var metadata = Metadata.create([
-        Type<ClientUser>.optionalProperty("userName", get: { $0.userName }, set: { $0.userName = $1 }),
+            Type<ClientUser>.optionalProperty("userName", get: { $0.userName }, set: { $0.userName = $1 }),
         ])
 }
 
@@ -788,14 +758,14 @@ extension CreateTechnology : JsonSerializable
 {
     public static var typeName:String { return "CreateTechnology" }
     public static var metadata = Metadata.create([
-        Type<CreateTechnology>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
-        Type<CreateTechnology>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
-        Type<CreateTechnology>.optionalProperty("vendorUrl", get: { $0.vendorUrl }, set: { $0.vendorUrl = $1 }),
-        Type<CreateTechnology>.optionalProperty("productUrl", get: { $0.productUrl }, set: { $0.productUrl = $1 }),
-        Type<CreateTechnology>.optionalProperty("logoUrl", get: { $0.logoUrl }, set: { $0.logoUrl = $1 }),
-        Type<CreateTechnology>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
-        Type<CreateTechnology>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
-        Type<CreateTechnology>.optionalProperty("tier", get: { $0.tier }, set: { $0.tier = $1 }),
+            Type<CreateTechnology>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
+            Type<CreateTechnology>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
+            Type<CreateTechnology>.optionalProperty("vendorUrl", get: { $0.vendorUrl }, set: { $0.vendorUrl = $1 }),
+            Type<CreateTechnology>.optionalProperty("productUrl", get: { $0.productUrl }, set: { $0.productUrl = $1 }),
+            Type<CreateTechnology>.optionalProperty("logoUrl", get: { $0.logoUrl }, set: { $0.logoUrl = $1 }),
+            Type<CreateTechnology>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
+            Type<CreateTechnology>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
+            Type<CreateTechnology>.optionalProperty("tier", get: { $0.tier }, set: { $0.tier = $1 }),
         ])
 }
 
@@ -803,15 +773,15 @@ extension UpdateTechnology : JsonSerializable
 {
     public static var typeName:String { return "UpdateTechnology" }
     public static var metadata = Metadata.create([
-        Type<UpdateTechnology>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
-        Type<UpdateTechnology>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
-        Type<UpdateTechnology>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
-        Type<UpdateTechnology>.optionalProperty("vendorUrl", get: { $0.vendorUrl }, set: { $0.vendorUrl = $1 }),
-        Type<UpdateTechnology>.optionalProperty("productUrl", get: { $0.productUrl }, set: { $0.productUrl = $1 }),
-        Type<UpdateTechnology>.optionalProperty("logoUrl", get: { $0.logoUrl }, set: { $0.logoUrl = $1 }),
-        Type<UpdateTechnology>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
-        Type<UpdateTechnology>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
-        Type<UpdateTechnology>.optionalProperty("tier", get: { $0.tier }, set: { $0.tier = $1 }),
+            Type<UpdateTechnology>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
+            Type<UpdateTechnology>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
+            Type<UpdateTechnology>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
+            Type<UpdateTechnology>.optionalProperty("vendorUrl", get: { $0.vendorUrl }, set: { $0.vendorUrl = $1 }),
+            Type<UpdateTechnology>.optionalProperty("productUrl", get: { $0.productUrl }, set: { $0.productUrl = $1 }),
+            Type<UpdateTechnology>.optionalProperty("logoUrl", get: { $0.logoUrl }, set: { $0.logoUrl = $1 }),
+            Type<UpdateTechnology>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
+            Type<UpdateTechnology>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
+            Type<UpdateTechnology>.optionalProperty("tier", get: { $0.tier }, set: { $0.tier = $1 }),
         ])
 }
 
@@ -819,7 +789,7 @@ extension DeleteTechnology : JsonSerializable
 {
     public static var typeName:String { return "DeleteTechnology" }
     public static var metadata = Metadata.create([
-        Type<DeleteTechnology>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
+            Type<DeleteTechnology>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
         ])
 }
 
@@ -827,14 +797,14 @@ extension CreateTechnologyStack : JsonSerializable
 {
     public static var typeName:String { return "CreateTechnologyStack" }
     public static var metadata = Metadata.create([
-        Type<CreateTechnologyStack>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
-        Type<CreateTechnologyStack>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
-        Type<CreateTechnologyStack>.optionalProperty("appUrl", get: { $0.appUrl }, set: { $0.appUrl = $1 }),
-        Type<CreateTechnologyStack>.optionalProperty("screenshotUrl", get: { $0.screenshotUrl }, set: { $0.screenshotUrl = $1 }),
-        Type<CreateTechnologyStack>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
-        Type<CreateTechnologyStack>.optionalProperty("details", get: { $0.details }, set: { $0.details = $1 }),
-        Type<CreateTechnologyStack>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
-        Type<CreateTechnologyStack>.arrayProperty("technologyIds", get: { $0.technologyIds }, set: { $0.technologyIds = $1 }),
+            Type<CreateTechnologyStack>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
+            Type<CreateTechnologyStack>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
+            Type<CreateTechnologyStack>.optionalProperty("appUrl", get: { $0.appUrl }, set: { $0.appUrl = $1 }),
+            Type<CreateTechnologyStack>.optionalProperty("screenshotUrl", get: { $0.screenshotUrl }, set: { $0.screenshotUrl = $1 }),
+            Type<CreateTechnologyStack>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
+            Type<CreateTechnologyStack>.optionalProperty("details", get: { $0.details }, set: { $0.details = $1 }),
+            Type<CreateTechnologyStack>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
+            Type<CreateTechnologyStack>.arrayProperty("technologyIds", get: { $0.technologyIds }, set: { $0.technologyIds = $1 }),
         ])
 }
 
@@ -842,15 +812,15 @@ extension UpdateTechnologyStack : JsonSerializable
 {
     public static var typeName:String { return "UpdateTechnologyStack" }
     public static var metadata = Metadata.create([
-        Type<UpdateTechnologyStack>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
-        Type<UpdateTechnologyStack>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
-        Type<UpdateTechnologyStack>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
-        Type<UpdateTechnologyStack>.optionalProperty("appUrl", get: { $0.appUrl }, set: { $0.appUrl = $1 }),
-        Type<UpdateTechnologyStack>.optionalProperty("screenshotUrl", get: { $0.screenshotUrl }, set: { $0.screenshotUrl = $1 }),
-        Type<UpdateTechnologyStack>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
-        Type<UpdateTechnologyStack>.optionalProperty("details", get: { $0.details }, set: { $0.details = $1 }),
-        Type<UpdateTechnologyStack>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
-        Type<UpdateTechnologyStack>.arrayProperty("technologyIds", get: { $0.technologyIds }, set: { $0.technologyIds = $1 }),
+            Type<UpdateTechnologyStack>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
+            Type<UpdateTechnologyStack>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
+            Type<UpdateTechnologyStack>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
+            Type<UpdateTechnologyStack>.optionalProperty("appUrl", get: { $0.appUrl }, set: { $0.appUrl = $1 }),
+            Type<UpdateTechnologyStack>.optionalProperty("screenshotUrl", get: { $0.screenshotUrl }, set: { $0.screenshotUrl = $1 }),
+            Type<UpdateTechnologyStack>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
+            Type<UpdateTechnologyStack>.optionalProperty("details", get: { $0.details }, set: { $0.details = $1 }),
+            Type<UpdateTechnologyStack>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
+            Type<UpdateTechnologyStack>.arrayProperty("technologyIds", get: { $0.technologyIds }, set: { $0.technologyIds = $1 }),
         ])
 }
 
@@ -858,7 +828,7 @@ extension DeleteTechnologyStack : JsonSerializable
 {
     public static var typeName:String { return "DeleteTechnologyStack" }
     public static var metadata = Metadata.create([
-        Type<DeleteTechnologyStack>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
+            Type<DeleteTechnologyStack>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
         ])
 }
 
@@ -873,7 +843,7 @@ extension GetTechnologyPreviousVersions : JsonSerializable
 {
     public static var typeName:String { return "GetTechnologyPreviousVersions" }
     public static var metadata = Metadata.create([
-        Type<GetTechnologyPreviousVersions>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<GetTechnologyPreviousVersions>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
         ])
 }
 
@@ -888,7 +858,7 @@ extension GetTechnology : JsonSerializable
 {
     public static var typeName:String { return "GetTechnology" }
     public static var metadata = Metadata.create([
-        Type<GetTechnology>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<GetTechnology>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
         ])
 }
 
@@ -896,7 +866,7 @@ extension GetTechnologyFavoriteDetails : JsonSerializable
 {
     public static var typeName:String { return "GetTechnologyFavoriteDetails" }
     public static var metadata = Metadata.create([
-        Type<GetTechnologyFavoriteDetails>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<GetTechnologyFavoriteDetails>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
         ])
 }
 
@@ -904,7 +874,7 @@ extension GetTechnologyStackPreviousVersions : JsonSerializable
 {
     public static var typeName:String { return "GetTechnologyStackPreviousVersions" }
     public static var metadata = Metadata.create([
-        Type<GetTechnologyStackPreviousVersions>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<GetTechnologyStackPreviousVersions>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
         ])
 }
 
@@ -912,8 +882,8 @@ extension GetPageStats : JsonSerializable
 {
     public static var typeName:String { return "GetPageStats" }
     public static var metadata = Metadata.create([
-        Type<GetPageStats>.optionalProperty("type", get: { $0.type }, set: { $0.type = $1 }),
-        Type<GetPageStats>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<GetPageStats>.optionalProperty("type", get: { $0.type }, set: { $0.type = $1 }),
+            Type<GetPageStats>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
         ])
 }
 
@@ -921,7 +891,7 @@ extension Overview : JsonSerializable
 {
     public static var typeName:String { return "Overview" }
     public static var metadata = Metadata.create([
-        Type<Overview>.optionalProperty("reload", get: { $0.reload }, set: { $0.reload = $1 }),
+            Type<Overview>.optionalProperty("reload", get: { $0.reload }, set: { $0.reload = $1 }),
         ])
 }
 
@@ -929,7 +899,7 @@ extension AppOverview : JsonSerializable
 {
     public static var typeName:String { return "AppOverview" }
     public static var metadata = Metadata.create([
-        Type<AppOverview>.optionalProperty("reload", get: { $0.reload }, set: { $0.reload = $1 }),
+            Type<AppOverview>.optionalProperty("reload", get: { $0.reload }, set: { $0.reload = $1 }),
         ])
 }
 
@@ -944,7 +914,7 @@ extension GetTechnologyStack : JsonSerializable
 {
     public static var typeName:String { return "GetTechnologyStack" }
     public static var metadata = Metadata.create([
-        Type<GetTechnologyStack>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<GetTechnologyStack>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
         ])
 }
 
@@ -952,7 +922,7 @@ extension GetTechnologyStackFavoriteDetails : JsonSerializable
 {
     public static var typeName:String { return "GetTechnologyStackFavoriteDetails" }
     public static var metadata = Metadata.create([
-        Type<GetTechnologyStackFavoriteDetails>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<GetTechnologyStackFavoriteDetails>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
         ])
 }
 
@@ -967,7 +937,7 @@ extension GetFavoriteTechStack : JsonSerializable
 {
     public static var typeName:String { return "GetFavoriteTechStack" }
     public static var metadata = Metadata.create([
-        Type<GetFavoriteTechStack>.optionalProperty("technologyStackId", get: { $0.technologyStackId }, set: { $0.technologyStackId = $1 }),
+            Type<GetFavoriteTechStack>.optionalProperty("technologyStackId", get: { $0.technologyStackId }, set: { $0.technologyStackId = $1 }),
         ])
 }
 
@@ -975,7 +945,7 @@ extension AddFavoriteTechStack : JsonSerializable
 {
     public static var typeName:String { return "AddFavoriteTechStack" }
     public static var metadata = Metadata.create([
-        Type<AddFavoriteTechStack>.optionalProperty("technologyStackId", get: { $0.technologyStackId }, set: { $0.technologyStackId = $1 }),
+            Type<AddFavoriteTechStack>.optionalProperty("technologyStackId", get: { $0.technologyStackId }, set: { $0.technologyStackId = $1 }),
         ])
 }
 
@@ -983,7 +953,7 @@ extension RemoveFavoriteTechStack : JsonSerializable
 {
     public static var typeName:String { return "RemoveFavoriteTechStack" }
     public static var metadata = Metadata.create([
-        Type<RemoveFavoriteTechStack>.optionalProperty("technologyStackId", get: { $0.technologyStackId }, set: { $0.technologyStackId = $1 }),
+            Type<RemoveFavoriteTechStack>.optionalProperty("technologyStackId", get: { $0.technologyStackId }, set: { $0.technologyStackId = $1 }),
         ])
 }
 
@@ -991,7 +961,7 @@ extension GetFavoriteTechnologies : JsonSerializable
 {
     public static var typeName:String { return "GetFavoriteTechnologies" }
     public static var metadata = Metadata.create([
-        Type<GetFavoriteTechnologies>.optionalProperty("technologyId", get: { $0.technologyId }, set: { $0.technologyId = $1 }),
+            Type<GetFavoriteTechnologies>.optionalProperty("technologyId", get: { $0.technologyId }, set: { $0.technologyId = $1 }),
         ])
 }
 
@@ -999,7 +969,7 @@ extension AddFavoriteTechnology : JsonSerializable
 {
     public static var typeName:String { return "AddFavoriteTechnology" }
     public static var metadata = Metadata.create([
-        Type<AddFavoriteTechnology>.optionalProperty("technologyId", get: { $0.technologyId }, set: { $0.technologyId = $1 }),
+            Type<AddFavoriteTechnology>.optionalProperty("technologyId", get: { $0.technologyId }, set: { $0.technologyId = $1 }),
         ])
 }
 
@@ -1007,7 +977,7 @@ extension RemoveFavoriteTechnology : JsonSerializable
 {
     public static var typeName:String { return "RemoveFavoriteTechnology" }
     public static var metadata = Metadata.create([
-        Type<RemoveFavoriteTechnology>.optionalProperty("technologyId", get: { $0.technologyId }, set: { $0.technologyId = $1 }),
+            Type<RemoveFavoriteTechnology>.optionalProperty("technologyId", get: { $0.technologyId }, set: { $0.technologyId = $1 }),
         ])
 }
 
@@ -1022,7 +992,7 @@ extension GetUserInfo : JsonSerializable
 {
     public static var typeName:String { return "GetUserInfo" }
     public static var metadata = Metadata.create([
-        Type<GetUserInfo>.optionalProperty("userName", get: { $0.userName }, set: { $0.userName = $1 }),
+            Type<GetUserInfo>.optionalProperty("userName", get: { $0.userName }, set: { $0.userName = $1 }),
         ])
 }
 
@@ -1030,7 +1000,7 @@ extension ConvertSessionToToken : JsonSerializable
 {
     public static var typeName:String { return "ConvertSessionToToken" }
     public static var metadata = Metadata.create([
-        Type<ConvertSessionToToken>.optionalProperty("preserveSession", get: { $0.preserveSession }, set: { $0.preserveSession = $1 }),
+            Type<ConvertSessionToToken>.optionalProperty("preserveSession", get: { $0.preserveSession }, set: { $0.preserveSession = $1 }),
         ])
 }
 
@@ -1038,7 +1008,7 @@ extension LogoUrlApprovalResponse : JsonSerializable
 {
     public static var typeName:String { return "LogoUrlApprovalResponse" }
     public static var metadata = Metadata.create([
-        Type<LogoUrlApprovalResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
+            Type<LogoUrlApprovalResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
         ])
 }
 
@@ -1053,8 +1023,8 @@ extension CreateTechnologyResponse : JsonSerializable
 {
     public static var typeName:String { return "CreateTechnologyResponse" }
     public static var metadata = Metadata.create([
-        Type<CreateTechnologyResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
-        Type<CreateTechnologyResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
+            Type<CreateTechnologyResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
+            Type<CreateTechnologyResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
         ])
 }
 
@@ -1062,8 +1032,8 @@ extension UpdateTechnologyResponse : JsonSerializable
 {
     public static var typeName:String { return "UpdateTechnologyResponse" }
     public static var metadata = Metadata.create([
-        Type<UpdateTechnologyResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
-        Type<UpdateTechnologyResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
+            Type<UpdateTechnologyResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
+            Type<UpdateTechnologyResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
         ])
 }
 
@@ -1071,8 +1041,8 @@ extension DeleteTechnologyResponse : JsonSerializable
 {
     public static var typeName:String { return "DeleteTechnologyResponse" }
     public static var metadata = Metadata.create([
-        Type<DeleteTechnologyResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
-        Type<DeleteTechnologyResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
+            Type<DeleteTechnologyResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
+            Type<DeleteTechnologyResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
         ])
 }
 
@@ -1080,8 +1050,8 @@ extension CreateTechnologyStackResponse : JsonSerializable
 {
     public static var typeName:String { return "CreateTechnologyStackResponse" }
     public static var metadata = Metadata.create([
-        Type<CreateTechnologyStackResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
-        Type<CreateTechnologyStackResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
+            Type<CreateTechnologyStackResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
+            Type<CreateTechnologyStackResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
         ])
 }
 
@@ -1089,8 +1059,8 @@ extension UpdateTechnologyStackResponse : JsonSerializable
 {
     public static var typeName:String { return "UpdateTechnologyStackResponse" }
     public static var metadata = Metadata.create([
-        Type<UpdateTechnologyStackResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
-        Type<UpdateTechnologyStackResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
+            Type<UpdateTechnologyStackResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
+            Type<UpdateTechnologyStackResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
         ])
 }
 
@@ -1098,8 +1068,8 @@ extension DeleteTechnologyStackResponse : JsonSerializable
 {
     public static var typeName:String { return "DeleteTechnologyStackResponse" }
     public static var metadata = Metadata.create([
-        Type<DeleteTechnologyStackResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
-        Type<DeleteTechnologyStackResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
+            Type<DeleteTechnologyStackResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
+            Type<DeleteTechnologyStackResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
         ])
 }
 
@@ -1107,7 +1077,7 @@ extension GetTechnologyPreviousVersionsResponse : JsonSerializable
 {
     public static var typeName:String { return "GetTechnologyPreviousVersionsResponse" }
     public static var metadata = Metadata.create([
-        Type<GetTechnologyPreviousVersionsResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
+            Type<GetTechnologyPreviousVersionsResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
         ])
 }
 
@@ -1115,7 +1085,7 @@ extension GetAllTechnologiesResponse : JsonSerializable
 {
     public static var typeName:String { return "GetAllTechnologiesResponse" }
     public static var metadata = Metadata.create([
-        Type<GetAllTechnologiesResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
+            Type<GetAllTechnologiesResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
         ])
 }
 
@@ -1123,10 +1093,10 @@ extension GetTechnologyResponse : JsonSerializable
 {
     public static var typeName:String { return "GetTechnologyResponse" }
     public static var metadata = Metadata.create([
-        Type<GetTechnologyResponse>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
-        Type<GetTechnologyResponse>.optionalObjectProperty("technology", get: { $0.technology }, set: { $0.technology = $1 }),
-        Type<GetTechnologyResponse>.arrayProperty("technologyStacks", get: { $0.technologyStacks }, set: { $0.technologyStacks = $1 }),
-        Type<GetTechnologyResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
+            Type<GetTechnologyResponse>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
+            Type<GetTechnologyResponse>.optionalObjectProperty("technology", get: { $0.technology }, set: { $0.technology = $1 }),
+            Type<GetTechnologyResponse>.arrayProperty("technologyStacks", get: { $0.technologyStacks }, set: { $0.technologyStacks = $1 }),
+            Type<GetTechnologyResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
         ])
 }
 
@@ -1134,8 +1104,8 @@ extension GetTechnologyFavoriteDetailsResponse : JsonSerializable
 {
     public static var typeName:String { return "GetTechnologyFavoriteDetailsResponse" }
     public static var metadata = Metadata.create([
-        Type<GetTechnologyFavoriteDetailsResponse>.arrayProperty("users", get: { $0.users }, set: { $0.users = $1 }),
-        Type<GetTechnologyFavoriteDetailsResponse>.optionalProperty("favoriteCount", get: { $0.favoriteCount }, set: { $0.favoriteCount = $1 }),
+            Type<GetTechnologyFavoriteDetailsResponse>.arrayProperty("users", get: { $0.users }, set: { $0.users = $1 }),
+            Type<GetTechnologyFavoriteDetailsResponse>.optionalProperty("favoriteCount", get: { $0.favoriteCount }, set: { $0.favoriteCount = $1 }),
         ])
 }
 
@@ -1143,7 +1113,7 @@ extension GetTechnologyStackPreviousVersionsResponse : JsonSerializable
 {
     public static var typeName:String { return "GetTechnologyStackPreviousVersionsResponse" }
     public static var metadata = Metadata.create([
-        Type<GetTechnologyStackPreviousVersionsResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
+            Type<GetTechnologyStackPreviousVersionsResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
         ])
 }
 
@@ -1151,10 +1121,10 @@ extension GetPageStatsResponse : JsonSerializable
 {
     public static var typeName:String { return "GetPageStatsResponse" }
     public static var metadata = Metadata.create([
-        Type<GetPageStatsResponse>.optionalProperty("type", get: { $0.type }, set: { $0.type = $1 }),
-        Type<GetPageStatsResponse>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
-        Type<GetPageStatsResponse>.optionalProperty("viewCount", get: { $0.viewCount }, set: { $0.viewCount = $1 }),
-        Type<GetPageStatsResponse>.optionalProperty("favCount", get: { $0.favCount }, set: { $0.favCount = $1 }),
+            Type<GetPageStatsResponse>.optionalProperty("type", get: { $0.type }, set: { $0.type = $1 }),
+            Type<GetPageStatsResponse>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<GetPageStatsResponse>.optionalProperty("viewCount", get: { $0.viewCount }, set: { $0.viewCount = $1 }),
+            Type<GetPageStatsResponse>.optionalProperty("favCount", get: { $0.favCount }, set: { $0.favCount = $1 }),
         ])
 }
 
@@ -1162,13 +1132,13 @@ extension OverviewResponse : JsonSerializable
 {
     public static var typeName:String { return "OverviewResponse" }
     public static var metadata = Metadata.create([
-        Type<OverviewResponse>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
-        Type<OverviewResponse>.arrayProperty("topUsers", get: { $0.topUsers }, set: { $0.topUsers = $1 }),
-        Type<OverviewResponse>.arrayProperty("topTechnologies", get: { $0.topTechnologies }, set: { $0.topTechnologies = $1 }),
-        Type<OverviewResponse>.arrayProperty("latestTechStacks", get: { $0.latestTechStacks }, set: { $0.latestTechStacks = $1 }),
-        Type<OverviewResponse>.arrayProperty("popularTechStacks", get: { $0.popularTechStacks }, set: { $0.popularTechStacks = $1 }),
-        Type<OverviewResponse>.objectProperty("topTechnologiesByTier", get: { $0.topTechnologiesByTier }, set: { $0.topTechnologiesByTier = $1 }),
-        Type<OverviewResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
+            Type<OverviewResponse>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
+            Type<OverviewResponse>.arrayProperty("topUsers", get: { $0.topUsers }, set: { $0.topUsers = $1 }),
+            Type<OverviewResponse>.arrayProperty("topTechnologies", get: { $0.topTechnologies }, set: { $0.topTechnologies = $1 }),
+            Type<OverviewResponse>.arrayProperty("latestTechStacks", get: { $0.latestTechStacks }, set: { $0.latestTechStacks = $1 }),
+            Type<OverviewResponse>.arrayProperty("popularTechStacks", get: { $0.popularTechStacks }, set: { $0.popularTechStacks = $1 }),
+            Type<OverviewResponse>.objectProperty("topTechnologiesByTier", get: { $0.topTechnologiesByTier }, set: { $0.topTechnologiesByTier = $1 }),
+            Type<OverviewResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
         ])
 }
 
@@ -1176,10 +1146,10 @@ extension AppOverviewResponse : JsonSerializable
 {
     public static var typeName:String { return "AppOverviewResponse" }
     public static var metadata = Metadata.create([
-        Type<AppOverviewResponse>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
-        Type<AppOverviewResponse>.arrayProperty("allTiers", get: { $0.allTiers }, set: { $0.allTiers = $1 }),
-        Type<AppOverviewResponse>.arrayProperty("topTechnologies", get: { $0.topTechnologies }, set: { $0.topTechnologies = $1 }),
-        Type<AppOverviewResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
+            Type<AppOverviewResponse>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
+            Type<AppOverviewResponse>.arrayProperty("allTiers", get: { $0.allTiers }, set: { $0.allTiers = $1 }),
+            Type<AppOverviewResponse>.arrayProperty("topTechnologies", get: { $0.topTechnologies }, set: { $0.topTechnologies = $1 }),
+            Type<AppOverviewResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
         ])
 }
 
@@ -1187,7 +1157,7 @@ extension GetAllTechnologyStacksResponse : JsonSerializable
 {
     public static var typeName:String { return "GetAllTechnologyStacksResponse" }
     public static var metadata = Metadata.create([
-        Type<GetAllTechnologyStacksResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
+            Type<GetAllTechnologyStacksResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
         ])
 }
 
@@ -1195,9 +1165,9 @@ extension GetTechnologyStackResponse : JsonSerializable
 {
     public static var typeName:String { return "GetTechnologyStackResponse" }
     public static var metadata = Metadata.create([
-        Type<GetTechnologyStackResponse>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
-        Type<GetTechnologyStackResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
-        Type<GetTechnologyStackResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
+            Type<GetTechnologyStackResponse>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
+            Type<GetTechnologyStackResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
+            Type<GetTechnologyStackResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
         ])
 }
 
@@ -1205,8 +1175,8 @@ extension GetTechnologyStackFavoriteDetailsResponse : JsonSerializable
 {
     public static var typeName:String { return "GetTechnologyStackFavoriteDetailsResponse" }
     public static var metadata = Metadata.create([
-        Type<GetTechnologyStackFavoriteDetailsResponse>.arrayProperty("users", get: { $0.users }, set: { $0.users = $1 }),
-        Type<GetTechnologyStackFavoriteDetailsResponse>.optionalProperty("favoriteCount", get: { $0.favoriteCount }, set: { $0.favoriteCount = $1 }),
+            Type<GetTechnologyStackFavoriteDetailsResponse>.arrayProperty("users", get: { $0.users }, set: { $0.users = $1 }),
+            Type<GetTechnologyStackFavoriteDetailsResponse>.optionalProperty("favoriteCount", get: { $0.favoriteCount }, set: { $0.favoriteCount = $1 }),
         ])
 }
 
@@ -1214,7 +1184,7 @@ extension GetConfigResponse : JsonSerializable
 {
     public static var typeName:String { return "GetConfigResponse" }
     public static var metadata = Metadata.create([
-        Type<GetConfigResponse>.arrayProperty("allTiers", get: { $0.allTiers }, set: { $0.allTiers = $1 }),
+            Type<GetConfigResponse>.arrayProperty("allTiers", get: { $0.allTiers }, set: { $0.allTiers = $1 }),
         ])
 }
 
@@ -1222,7 +1192,7 @@ extension GetFavoriteTechStackResponse : JsonSerializable
 {
     public static var typeName:String { return "GetFavoriteTechStackResponse" }
     public static var metadata = Metadata.create([
-        Type<GetFavoriteTechStackResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
+            Type<GetFavoriteTechStackResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
         ])
 }
 
@@ -1230,7 +1200,7 @@ extension FavoriteTechStackResponse : JsonSerializable
 {
     public static var typeName:String { return "FavoriteTechStackResponse" }
     public static var metadata = Metadata.create([
-        Type<FavoriteTechStackResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
+            Type<FavoriteTechStackResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
         ])
 }
 
@@ -1238,7 +1208,7 @@ extension GetFavoriteTechnologiesResponse : JsonSerializable
 {
     public static var typeName:String { return "GetFavoriteTechnologiesResponse" }
     public static var metadata = Metadata.create([
-        Type<GetFavoriteTechnologiesResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
+            Type<GetFavoriteTechnologiesResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
         ])
 }
 
@@ -1246,7 +1216,7 @@ extension FavoriteTechnologyResponse : JsonSerializable
 {
     public static var typeName:String { return "FavoriteTechnologyResponse" }
     public static var metadata = Metadata.create([
-        Type<FavoriteTechnologyResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
+            Type<FavoriteTechnologyResponse>.optionalObjectProperty("result", get: { $0.result }, set: { $0.result = $1 }),
         ])
 }
 
@@ -1254,7 +1224,7 @@ extension GetUserFeedResponse : JsonSerializable
 {
     public static var typeName:String { return "GetUserFeedResponse" }
     public static var metadata = Metadata.create([
-        Type<GetUserFeedResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
+            Type<GetUserFeedResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
         ])
 }
 
@@ -1262,12 +1232,12 @@ extension GetUserInfoResponse : JsonSerializable
 {
     public static var typeName:String { return "GetUserInfoResponse" }
     public static var metadata = Metadata.create([
-        Type<GetUserInfoResponse>.optionalProperty("userName", get: { $0.userName }, set: { $0.userName = $1 }),
-        Type<GetUserInfoResponse>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
-        Type<GetUserInfoResponse>.optionalProperty("avatarUrl", get: { $0.avatarUrl }, set: { $0.avatarUrl = $1 }),
-        Type<GetUserInfoResponse>.arrayProperty("techStacks", get: { $0.techStacks }, set: { $0.techStacks = $1 }),
-        Type<GetUserInfoResponse>.arrayProperty("favoriteTechStacks", get: { $0.favoriteTechStacks }, set: { $0.favoriteTechStacks = $1 }),
-        Type<GetUserInfoResponse>.arrayProperty("favoriteTechnologies", get: { $0.favoriteTechnologies }, set: { $0.favoriteTechnologies = $1 }),
+            Type<GetUserInfoResponse>.optionalProperty("userName", get: { $0.userName }, set: { $0.userName = $1 }),
+            Type<GetUserInfoResponse>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
+            Type<GetUserInfoResponse>.optionalProperty("avatarUrl", get: { $0.avatarUrl }, set: { $0.avatarUrl = $1 }),
+            Type<GetUserInfoResponse>.arrayProperty("techStacks", get: { $0.techStacks }, set: { $0.techStacks = $1 }),
+            Type<GetUserInfoResponse>.arrayProperty("favoriteTechStacks", get: { $0.favoriteTechStacks }, set: { $0.favoriteTechStacks = $1 }),
+            Type<GetUserInfoResponse>.arrayProperty("favoriteTechnologies", get: { $0.favoriteTechnologies }, set: { $0.favoriteTechnologies = $1 }),
         ])
 }
 
@@ -1275,8 +1245,8 @@ extension ConvertSessionToTokenResponse : JsonSerializable
 {
     public static var typeName:String { return "ConvertSessionToTokenResponse" }
     public static var metadata = Metadata.create([
-        Type<ConvertSessionToTokenResponse>.objectProperty("meta", get: { $0.meta }, set: { $0.meta = $1 }),
-        Type<ConvertSessionToTokenResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
+            Type<ConvertSessionToTokenResponse>.objectProperty("meta", get: { $0.meta }, set: { $0.meta = $1 }),
+            Type<ConvertSessionToTokenResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
         ])
 }
 
@@ -1284,23 +1254,23 @@ extension Technology : JsonSerializable
 {
     public static var typeName:String { return "Technology" }
     public static var metadata = Metadata.create([
-        Type<Technology>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
-        Type<Technology>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
-        Type<Technology>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
-        Type<Technology>.optionalProperty("vendorUrl", get: { $0.vendorUrl }, set: { $0.vendorUrl = $1 }),
-        Type<Technology>.optionalProperty("productUrl", get: { $0.productUrl }, set: { $0.productUrl = $1 }),
-        Type<Technology>.optionalProperty("logoUrl", get: { $0.logoUrl }, set: { $0.logoUrl = $1 }),
-        Type<Technology>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
-        Type<Technology>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
-        Type<Technology>.optionalProperty("createdBy", get: { $0.createdBy }, set: { $0.createdBy = $1 }),
-        Type<Technology>.optionalProperty("lastModified", get: { $0.lastModified }, set: { $0.lastModified = $1 }),
-        Type<Technology>.optionalProperty("lastModifiedBy", get: { $0.lastModifiedBy }, set: { $0.lastModifiedBy = $1 }),
-        Type<Technology>.optionalProperty("ownerId", get: { $0.ownerId }, set: { $0.ownerId = $1 }),
-        Type<Technology>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
-        Type<Technology>.optionalProperty("logoApproved", get: { $0.logoApproved }, set: { $0.logoApproved = $1 }),
-        Type<Technology>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
-        Type<Technology>.optionalProperty("tier", get: { $0.tier }, set: { $0.tier = $1 }),
-        Type<Technology>.optionalProperty("lastStatusUpdate", get: { $0.lastStatusUpdate }, set: { $0.lastStatusUpdate = $1 }),
+            Type<Technology>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
+            Type<Technology>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
+            Type<Technology>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
+            Type<Technology>.optionalProperty("vendorUrl", get: { $0.vendorUrl }, set: { $0.vendorUrl = $1 }),
+            Type<Technology>.optionalProperty("productUrl", get: { $0.productUrl }, set: { $0.productUrl = $1 }),
+            Type<Technology>.optionalProperty("logoUrl", get: { $0.logoUrl }, set: { $0.logoUrl = $1 }),
+            Type<Technology>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
+            Type<Technology>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
+            Type<Technology>.optionalProperty("createdBy", get: { $0.createdBy }, set: { $0.createdBy = $1 }),
+            Type<Technology>.optionalProperty("lastModified", get: { $0.lastModified }, set: { $0.lastModified = $1 }),
+            Type<Technology>.optionalProperty("lastModifiedBy", get: { $0.lastModifiedBy }, set: { $0.lastModifiedBy = $1 }),
+            Type<Technology>.optionalProperty("ownerId", get: { $0.ownerId }, set: { $0.ownerId = $1 }),
+            Type<Technology>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<Technology>.optionalProperty("logoApproved", get: { $0.logoApproved }, set: { $0.logoApproved = $1 }),
+            Type<Technology>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
+            Type<Technology>.optionalProperty("tier", get: { $0.tier }, set: { $0.tier = $1 }),
+            Type<Technology>.optionalProperty("lastStatusUpdate", get: { $0.lastStatusUpdate }, set: { $0.lastStatusUpdate = $1 }),
         ])
 }
 
@@ -1350,23 +1320,23 @@ extension TechStackDetails : JsonSerializable
 {
     public static var typeName:String { return "TechStackDetails" }
     public static var metadata = Metadata.create([
-        Type<TechStackDetails>.optionalProperty("detailsHtml", get: { $0.detailsHtml }, set: { $0.detailsHtml = $1 }),
-        Type<TechStackDetails>.arrayProperty("technologyChoices", get: { $0.technologyChoices }, set: { $0.technologyChoices = $1 }),
-        Type<TechStackDetails>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
-        Type<TechStackDetails>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
-        Type<TechStackDetails>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
-        Type<TechStackDetails>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
-        Type<TechStackDetails>.optionalProperty("appUrl", get: { $0.appUrl }, set: { $0.appUrl = $1 }),
-        Type<TechStackDetails>.optionalProperty("screenshotUrl", get: { $0.screenshotUrl }, set: { $0.screenshotUrl = $1 }),
-        Type<TechStackDetails>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
-        Type<TechStackDetails>.optionalProperty("createdBy", get: { $0.createdBy }, set: { $0.createdBy = $1 }),
-        Type<TechStackDetails>.optionalProperty("lastModified", get: { $0.lastModified }, set: { $0.lastModified = $1 }),
-        Type<TechStackDetails>.optionalProperty("lastModifiedBy", get: { $0.lastModifiedBy }, set: { $0.lastModifiedBy = $1 }),
-        Type<TechStackDetails>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
-        Type<TechStackDetails>.optionalProperty("ownerId", get: { $0.ownerId }, set: { $0.ownerId = $1 }),
-        Type<TechStackDetails>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
-        Type<TechStackDetails>.optionalProperty("details", get: { $0.details }, set: { $0.details = $1 }),
-        Type<TechStackDetails>.optionalProperty("lastStatusUpdate", get: { $0.lastStatusUpdate }, set: { $0.lastStatusUpdate = $1 }),
+            Type<TechStackDetails>.optionalProperty("detailsHtml", get: { $0.detailsHtml }, set: { $0.detailsHtml = $1 }),
+            Type<TechStackDetails>.arrayProperty("technologyChoices", get: { $0.technologyChoices }, set: { $0.technologyChoices = $1 }),
+            Type<TechStackDetails>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
+            Type<TechStackDetails>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
+            Type<TechStackDetails>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
+            Type<TechStackDetails>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
+            Type<TechStackDetails>.optionalProperty("appUrl", get: { $0.appUrl }, set: { $0.appUrl = $1 }),
+            Type<TechStackDetails>.optionalProperty("screenshotUrl", get: { $0.screenshotUrl }, set: { $0.screenshotUrl = $1 }),
+            Type<TechStackDetails>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
+            Type<TechStackDetails>.optionalProperty("createdBy", get: { $0.createdBy }, set: { $0.createdBy = $1 }),
+            Type<TechStackDetails>.optionalProperty("lastModified", get: { $0.lastModified }, set: { $0.lastModified = $1 }),
+            Type<TechStackDetails>.optionalProperty("lastModifiedBy", get: { $0.lastModifiedBy }, set: { $0.lastModifiedBy = $1 }),
+            Type<TechStackDetails>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
+            Type<TechStackDetails>.optionalProperty("ownerId", get: { $0.ownerId }, set: { $0.ownerId = $1 }),
+            Type<TechStackDetails>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<TechStackDetails>.optionalProperty("details", get: { $0.details }, set: { $0.details = $1 }),
+            Type<TechStackDetails>.optionalProperty("lastStatusUpdate", get: { $0.lastStatusUpdate }, set: { $0.lastStatusUpdate = $1 }),
         ])
 }
 
@@ -1374,25 +1344,25 @@ extension TechnologyHistory : JsonSerializable
 {
     public static var typeName:String { return "TechnologyHistory" }
     public static var metadata = Metadata.create([
-        Type<TechnologyHistory>.optionalProperty("technologyId", get: { $0.technologyId }, set: { $0.technologyId = $1 }),
-        Type<TechnologyHistory>.optionalProperty("operation", get: { $0.operation }, set: { $0.operation = $1 }),
-        Type<TechnologyHistory>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
-        Type<TechnologyHistory>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
-        Type<TechnologyHistory>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
-        Type<TechnologyHistory>.optionalProperty("vendorUrl", get: { $0.vendorUrl }, set: { $0.vendorUrl = $1 }),
-        Type<TechnologyHistory>.optionalProperty("productUrl", get: { $0.productUrl }, set: { $0.productUrl = $1 }),
-        Type<TechnologyHistory>.optionalProperty("logoUrl", get: { $0.logoUrl }, set: { $0.logoUrl = $1 }),
-        Type<TechnologyHistory>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
-        Type<TechnologyHistory>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
-        Type<TechnologyHistory>.optionalProperty("createdBy", get: { $0.createdBy }, set: { $0.createdBy = $1 }),
-        Type<TechnologyHistory>.optionalProperty("lastModified", get: { $0.lastModified }, set: { $0.lastModified = $1 }),
-        Type<TechnologyHistory>.optionalProperty("lastModifiedBy", get: { $0.lastModifiedBy }, set: { $0.lastModifiedBy = $1 }),
-        Type<TechnologyHistory>.optionalProperty("ownerId", get: { $0.ownerId }, set: { $0.ownerId = $1 }),
-        Type<TechnologyHistory>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
-        Type<TechnologyHistory>.optionalProperty("logoApproved", get: { $0.logoApproved }, set: { $0.logoApproved = $1 }),
-        Type<TechnologyHistory>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
-        Type<TechnologyHistory>.optionalProperty("tier", get: { $0.tier }, set: { $0.tier = $1 }),
-        Type<TechnologyHistory>.optionalProperty("lastStatusUpdate", get: { $0.lastStatusUpdate }, set: { $0.lastStatusUpdate = $1 }),
+            Type<TechnologyHistory>.optionalProperty("technologyId", get: { $0.technologyId }, set: { $0.technologyId = $1 }),
+            Type<TechnologyHistory>.optionalProperty("operation", get: { $0.operation }, set: { $0.operation = $1 }),
+            Type<TechnologyHistory>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
+            Type<TechnologyHistory>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
+            Type<TechnologyHistory>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
+            Type<TechnologyHistory>.optionalProperty("vendorUrl", get: { $0.vendorUrl }, set: { $0.vendorUrl = $1 }),
+            Type<TechnologyHistory>.optionalProperty("productUrl", get: { $0.productUrl }, set: { $0.productUrl = $1 }),
+            Type<TechnologyHistory>.optionalProperty("logoUrl", get: { $0.logoUrl }, set: { $0.logoUrl = $1 }),
+            Type<TechnologyHistory>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
+            Type<TechnologyHistory>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
+            Type<TechnologyHistory>.optionalProperty("createdBy", get: { $0.createdBy }, set: { $0.createdBy = $1 }),
+            Type<TechnologyHistory>.optionalProperty("lastModified", get: { $0.lastModified }, set: { $0.lastModified = $1 }),
+            Type<TechnologyHistory>.optionalProperty("lastModifiedBy", get: { $0.lastModifiedBy }, set: { $0.lastModifiedBy = $1 }),
+            Type<TechnologyHistory>.optionalProperty("ownerId", get: { $0.ownerId }, set: { $0.ownerId = $1 }),
+            Type<TechnologyHistory>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<TechnologyHistory>.optionalProperty("logoApproved", get: { $0.logoApproved }, set: { $0.logoApproved = $1 }),
+            Type<TechnologyHistory>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
+            Type<TechnologyHistory>.optionalProperty("tier", get: { $0.tier }, set: { $0.tier = $1 }),
+            Type<TechnologyHistory>.optionalProperty("lastStatusUpdate", get: { $0.lastStatusUpdate }, set: { $0.lastStatusUpdate = $1 }),
         ])
 }
 
@@ -1400,21 +1370,21 @@ extension TechnologyStack : JsonSerializable
 {
     public static var typeName:String { return "TechnologyStack" }
     public static var metadata = Metadata.create([
-        Type<TechnologyStack>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
-        Type<TechnologyStack>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
-        Type<TechnologyStack>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
-        Type<TechnologyStack>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
-        Type<TechnologyStack>.optionalProperty("appUrl", get: { $0.appUrl }, set: { $0.appUrl = $1 }),
-        Type<TechnologyStack>.optionalProperty("screenshotUrl", get: { $0.screenshotUrl }, set: { $0.screenshotUrl = $1 }),
-        Type<TechnologyStack>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
-        Type<TechnologyStack>.optionalProperty("createdBy", get: { $0.createdBy }, set: { $0.createdBy = $1 }),
-        Type<TechnologyStack>.optionalProperty("lastModified", get: { $0.lastModified }, set: { $0.lastModified = $1 }),
-        Type<TechnologyStack>.optionalProperty("lastModifiedBy", get: { $0.lastModifiedBy }, set: { $0.lastModifiedBy = $1 }),
-        Type<TechnologyStack>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
-        Type<TechnologyStack>.optionalProperty("ownerId", get: { $0.ownerId }, set: { $0.ownerId = $1 }),
-        Type<TechnologyStack>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
-        Type<TechnologyStack>.optionalProperty("details", get: { $0.details }, set: { $0.details = $1 }),
-        Type<TechnologyStack>.optionalProperty("lastStatusUpdate", get: { $0.lastStatusUpdate }, set: { $0.lastStatusUpdate = $1 }),
+            Type<TechnologyStack>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
+            Type<TechnologyStack>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
+            Type<TechnologyStack>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
+            Type<TechnologyStack>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
+            Type<TechnologyStack>.optionalProperty("appUrl", get: { $0.appUrl }, set: { $0.appUrl = $1 }),
+            Type<TechnologyStack>.optionalProperty("screenshotUrl", get: { $0.screenshotUrl }, set: { $0.screenshotUrl = $1 }),
+            Type<TechnologyStack>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
+            Type<TechnologyStack>.optionalProperty("createdBy", get: { $0.createdBy }, set: { $0.createdBy = $1 }),
+            Type<TechnologyStack>.optionalProperty("lastModified", get: { $0.lastModified }, set: { $0.lastModified = $1 }),
+            Type<TechnologyStack>.optionalProperty("lastModifiedBy", get: { $0.lastModifiedBy }, set: { $0.lastModifiedBy = $1 }),
+            Type<TechnologyStack>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
+            Type<TechnologyStack>.optionalProperty("ownerId", get: { $0.ownerId }, set: { $0.ownerId = $1 }),
+            Type<TechnologyStack>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<TechnologyStack>.optionalProperty("details", get: { $0.details }, set: { $0.details = $1 }),
+            Type<TechnologyStack>.optionalProperty("lastStatusUpdate", get: { $0.lastStatusUpdate }, set: { $0.lastStatusUpdate = $1 }),
         ])
 }
 
@@ -1422,24 +1392,24 @@ extension TechnologyStackHistory : JsonSerializable
 {
     public static var typeName:String { return "TechnologyStackHistory" }
     public static var metadata = Metadata.create([
-        Type<TechnologyStackHistory>.optionalProperty("technologyStackId", get: { $0.technologyStackId }, set: { $0.technologyStackId = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("operation", get: { $0.operation }, set: { $0.operation = $1 }),
-        Type<TechnologyStackHistory>.arrayProperty("technologyIds", get: { $0.technologyIds }, set: { $0.technologyIds = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("appUrl", get: { $0.appUrl }, set: { $0.appUrl = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("screenshotUrl", get: { $0.screenshotUrl }, set: { $0.screenshotUrl = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("createdBy", get: { $0.createdBy }, set: { $0.createdBy = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("lastModified", get: { $0.lastModified }, set: { $0.lastModified = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("lastModifiedBy", get: { $0.lastModifiedBy }, set: { $0.lastModifiedBy = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("ownerId", get: { $0.ownerId }, set: { $0.ownerId = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("details", get: { $0.details }, set: { $0.details = $1 }),
-        Type<TechnologyStackHistory>.optionalProperty("lastStatusUpdate", get: { $0.lastStatusUpdate }, set: { $0.lastStatusUpdate = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("technologyStackId", get: { $0.technologyStackId }, set: { $0.technologyStackId = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("operation", get: { $0.operation }, set: { $0.operation = $1 }),
+            Type<TechnologyStackHistory>.arrayProperty("technologyIds", get: { $0.technologyIds }, set: { $0.technologyIds = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("appUrl", get: { $0.appUrl }, set: { $0.appUrl = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("screenshotUrl", get: { $0.screenshotUrl }, set: { $0.screenshotUrl = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("createdBy", get: { $0.createdBy }, set: { $0.createdBy = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("lastModified", get: { $0.lastModified }, set: { $0.lastModified = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("lastModifiedBy", get: { $0.lastModifiedBy }, set: { $0.lastModifiedBy = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("ownerId", get: { $0.ownerId }, set: { $0.ownerId = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("details", get: { $0.details }, set: { $0.details = $1 }),
+            Type<TechnologyStackHistory>.optionalProperty("lastStatusUpdate", get: { $0.lastStatusUpdate }, set: { $0.lastStatusUpdate = $1 }),
         ])
 }
 
@@ -1447,9 +1417,9 @@ extension UserInfo : JsonSerializable
 {
     public static var typeName:String { return "UserInfo" }
     public static var metadata = Metadata.create([
-        Type<UserInfo>.optionalProperty("userName", get: { $0.userName }, set: { $0.userName = $1 }),
-        Type<UserInfo>.optionalProperty("avatarUrl", get: { $0.avatarUrl }, set: { $0.avatarUrl = $1 }),
-        Type<UserInfo>.optionalProperty("stacksCount", get: { $0.stacksCount }, set: { $0.stacksCount = $1 }),
+            Type<UserInfo>.optionalProperty("userName", get: { $0.userName }, set: { $0.userName = $1 }),
+            Type<UserInfo>.optionalProperty("avatarUrl", get: { $0.avatarUrl }, set: { $0.avatarUrl = $1 }),
+            Type<UserInfo>.optionalProperty("stacksCount", get: { $0.stacksCount }, set: { $0.stacksCount = $1 }),
         ])
 }
 
@@ -1457,11 +1427,11 @@ extension TechnologyInfo : JsonSerializable
 {
     public static var typeName:String { return "TechnologyInfo" }
     public static var metadata = Metadata.create([
-        Type<TechnologyInfo>.optionalProperty("tier", get: { $0.tier }, set: { $0.tier = $1 }),
-        Type<TechnologyInfo>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
-        Type<TechnologyInfo>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
-        Type<TechnologyInfo>.optionalProperty("logoUrl", get: { $0.logoUrl }, set: { $0.logoUrl = $1 }),
-        Type<TechnologyInfo>.optionalProperty("stacksCount", get: { $0.stacksCount }, set: { $0.stacksCount = $1 }),
+            Type<TechnologyInfo>.optionalProperty("tier", get: { $0.tier }, set: { $0.tier = $1 }),
+            Type<TechnologyInfo>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<TechnologyInfo>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
+            Type<TechnologyInfo>.optionalProperty("logoUrl", get: { $0.logoUrl }, set: { $0.logoUrl = $1 }),
+            Type<TechnologyInfo>.optionalProperty("stacksCount", get: { $0.stacksCount }, set: { $0.stacksCount = $1 }),
         ])
 }
 
@@ -1469,9 +1439,9 @@ extension Option : JsonSerializable
 {
     public static var typeName:String { return "Option" }
     public static var metadata = Metadata.create([
-        Type<Option>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
-        Type<Option>.optionalProperty("title", get: { $0.title }, set: { $0.title = $1 }),
-        Type<Option>.optionalProperty("value", get: { $0.value }, set: { $0.value = $1 }),
+            Type<Option>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
+            Type<Option>.optionalProperty("title", get: { $0.title }, set: { $0.title = $1 }),
+            Type<Option>.optionalProperty("value", get: { $0.value }, set: { $0.value = $1 }),
         ])
 }
 
@@ -1479,25 +1449,25 @@ extension TechnologyInStack : JsonSerializable
 {
     public static var typeName:String { return "TechnologyInStack" }
     public static var metadata = Metadata.create([
-        Type<TechnologyInStack>.optionalProperty("technologyId", get: { $0.technologyId }, set: { $0.technologyId = $1 }),
-        Type<TechnologyInStack>.optionalProperty("technologyStackId", get: { $0.technologyStackId }, set: { $0.technologyStackId = $1 }),
-        Type<TechnologyInStack>.optionalProperty("justification", get: { $0.justification }, set: { $0.justification = $1 }),
-        Type<TechnologyInStack>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
-        Type<TechnologyInStack>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
-        Type<TechnologyInStack>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
-        Type<TechnologyInStack>.optionalProperty("vendorUrl", get: { $0.vendorUrl }, set: { $0.vendorUrl = $1 }),
-        Type<TechnologyInStack>.optionalProperty("productUrl", get: { $0.productUrl }, set: { $0.productUrl = $1 }),
-        Type<TechnologyInStack>.optionalProperty("logoUrl", get: { $0.logoUrl }, set: { $0.logoUrl = $1 }),
-        Type<TechnologyInStack>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
-        Type<TechnologyInStack>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
-        Type<TechnologyInStack>.optionalProperty("createdBy", get: { $0.createdBy }, set: { $0.createdBy = $1 }),
-        Type<TechnologyInStack>.optionalProperty("lastModified", get: { $0.lastModified }, set: { $0.lastModified = $1 }),
-        Type<TechnologyInStack>.optionalProperty("lastModifiedBy", get: { $0.lastModifiedBy }, set: { $0.lastModifiedBy = $1 }),
-        Type<TechnologyInStack>.optionalProperty("ownerId", get: { $0.ownerId }, set: { $0.ownerId = $1 }),
-        Type<TechnologyInStack>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
-        Type<TechnologyInStack>.optionalProperty("logoApproved", get: { $0.logoApproved }, set: { $0.logoApproved = $1 }),
-        Type<TechnologyInStack>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
-        Type<TechnologyInStack>.optionalProperty("tier", get: { $0.tier }, set: { $0.tier = $1 }),
-        Type<TechnologyInStack>.optionalProperty("lastStatusUpdate", get: { $0.lastStatusUpdate }, set: { $0.lastStatusUpdate = $1 }),
+            Type<TechnologyInStack>.optionalProperty("technologyId", get: { $0.technologyId }, set: { $0.technologyId = $1 }),
+            Type<TechnologyInStack>.optionalProperty("technologyStackId", get: { $0.technologyStackId }, set: { $0.technologyStackId = $1 }),
+            Type<TechnologyInStack>.optionalProperty("justification", get: { $0.justification }, set: { $0.justification = $1 }),
+            Type<TechnologyInStack>.optionalProperty("id", get: { $0.id }, set: { $0.id = $1 }),
+            Type<TechnologyInStack>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
+            Type<TechnologyInStack>.optionalProperty("vendorName", get: { $0.vendorName }, set: { $0.vendorName = $1 }),
+            Type<TechnologyInStack>.optionalProperty("vendorUrl", get: { $0.vendorUrl }, set: { $0.vendorUrl = $1 }),
+            Type<TechnologyInStack>.optionalProperty("productUrl", get: { $0.productUrl }, set: { $0.productUrl = $1 }),
+            Type<TechnologyInStack>.optionalProperty("logoUrl", get: { $0.logoUrl }, set: { $0.logoUrl = $1 }),
+            Type<TechnologyInStack>.optionalProperty("Description", get: { $0.Description }, set: { $0.Description = $1 }),
+            Type<TechnologyInStack>.optionalProperty("created", get: { $0.created }, set: { $0.created = $1 }),
+            Type<TechnologyInStack>.optionalProperty("createdBy", get: { $0.createdBy }, set: { $0.createdBy = $1 }),
+            Type<TechnologyInStack>.optionalProperty("lastModified", get: { $0.lastModified }, set: { $0.lastModified = $1 }),
+            Type<TechnologyInStack>.optionalProperty("lastModifiedBy", get: { $0.lastModifiedBy }, set: { $0.lastModifiedBy = $1 }),
+            Type<TechnologyInStack>.optionalProperty("ownerId", get: { $0.ownerId }, set: { $0.ownerId = $1 }),
+            Type<TechnologyInStack>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
+            Type<TechnologyInStack>.optionalProperty("logoApproved", get: { $0.logoApproved }, set: { $0.logoApproved = $1 }),
+            Type<TechnologyInStack>.optionalProperty("isLocked", get: { $0.isLocked }, set: { $0.isLocked = $1 }),
+            Type<TechnologyInStack>.optionalProperty("tier", get: { $0.tier }, set: { $0.tier = $1 }),
+            Type<TechnologyInStack>.optionalProperty("lastStatusUpdate", get: { $0.lastStatusUpdate }, set: { $0.lastStatusUpdate = $1 }),
         ])
 }
