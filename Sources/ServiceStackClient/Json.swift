@@ -869,20 +869,20 @@ public protocol HasMetadata {
 }
 
 public protocol Convertible {
-    associatedtype T
+    associatedtype _T //avoid conflicts when using `T` in generic classes implementing this protocoll
     static var typeName:String { get }
-    static func fromObject(_ any:Any) -> T?
+    static func fromObject(_ any:Any) -> _T?
 }
 
 public protocol JsonSerializable : HasMetadata, StringSerializable {
     func toJson() -> String
-    static func fromJson(_ json:String) -> T?
+    static func fromJson(_ json:String) -> _T?
 }
 			
 public protocol StringSerializable : Convertible {
     func toJson() -> String
     func toString() -> String
-    static func fromString(_ string:String) -> T?
+    static func fromString(_ string:String) -> _T?
 }
 
 
@@ -1062,7 +1062,7 @@ public class Type<T : HasMetadata> : TypeAccessor
         return JDictionaryProperty(name: name, get:get, set:set)
     }
     
-    public class func objectProperty<K : Hashable, P : StringSerializable>(_ name:String, get:@escaping (T) -> [K:[P]], set:@escaping (T,[K:[P]]) -> Void) -> PropertyType where K : StringSerializable, K == K.T
+    public class func objectProperty<K : Hashable, P : StringSerializable>(_ name:String, get:@escaping (T) -> [K:[P]], set:@escaping (T,[K:[P]]) -> Void) -> PropertyType where K : StringSerializable, K == K._T
     {
         return JDictionaryArrayProperty(name: name, get:get, set:set)
     }
@@ -1345,7 +1345,7 @@ public class JDictionaryProperty<T : HasMetadata, K : Hashable, P : StringSerial
     }
 }
 
-public class JDictionaryArrayProperty<T : HasMetadata, K : Hashable, P : StringSerializable> : PropertyBase<T> where K : StringSerializable, K == K.T
+public class JDictionaryArrayProperty<T : HasMetadata, K : Hashable, P : StringSerializable> : PropertyBase<T> where K : StringSerializable, K == K._T
 {
     public var get:(T) -> [K:[P]]
     public var set:(T,[K:[P]]) -> Void

@@ -1,5 +1,5 @@
 /* Options:
-Date: 2016-11-07 08:46:49
+Date: 2016-11-08 09:31:44
 SwiftVersion: 3.0
 Version: 4.00
 Tip: To override a DTO option, remove "//" prefix before updating
@@ -9,7 +9,7 @@ BaseUrl: http://test.servicestack.net
 //AddModelExtensions: True
 //AddServiceStackTypes: True
 //IncludeTypes: 
-//ExcludeTypes: 
+ExcludeTypes: QueryResponse`1,QueryBase`1,QueryBase`1,QueryBase
 //ExcludeGenericBaseTypes: True
 //AddResponseStatus: False
 //AddImplicitVersion: 
@@ -1095,6 +1095,9 @@ public class RequestLogsResponse
 public class AuthenticateResponse
 {
     required public init(){}
+    // @DataMember(Order=7)
+    public var responseStatus:ResponseStatus?
+
     // @DataMember(Order=1)
     public var userId:String?
 
@@ -1112,9 +1115,6 @@ public class AuthenticateResponse
 
     // @DataMember(Order=6)
     public var bearerToken:String?
-
-    // @DataMember(Order=7)
-    public var responseStatus:ResponseStatus?
 
     // @DataMember(Order=8)
     public var meta:[String:String] = [:]
@@ -1145,26 +1145,6 @@ public class UnAssignRolesResponse
     public var allPermissions:[String] = []
 
     // @DataMember(Order=3)
-    public var responseStatus:ResponseStatus?
-}
-
-// @DataContract
-public class QueryResponse<T : JsonSerializable>
-{
-    required public init(){}
-    // @DataMember(Order=1)
-    public var offset:Int?
-
-    // @DataMember(Order=2)
-    public var total:Int?
-
-    // @DataMember(Order=3)
-    public var results:[T] = []
-
-    // @DataMember(Order=4)
-    public var meta:[String:String] = [:]
-
-    // @DataMember(Order=5)
     public var responseStatus:ResponseStatus?
 }
 
@@ -1403,21 +1383,11 @@ public class RequestLogEntry
     public var requestDuration:TimeInterval?
 }
 
-public class QueryBase_1<T : JsonSerializable> : QueryBase
-{
-    required public init(){}
-}
-
 public class OnlyDefinedInGenericType
 {
     required public init(){}
     public var id:Int?
     public var name:String?
-}
-
-public class QueryBase_2<From : JsonSerializable, Into : JsonSerializable> : QueryBase
-{
-    required public init(){}
 }
 
 public class OnlyDefinedInGenericTypeFrom
@@ -1621,31 +1591,6 @@ public class Device
     public var type:String?
     public var timeStamp:Int64?
     public var channels:[Channel] = []
-}
-
-public class QueryBase
-{
-    required public init(){}
-    // @DataMember(Order=1)
-    public var skip:Int?
-
-    // @DataMember(Order=2)
-    public var take:Int?
-
-    // @DataMember(Order=3)
-    public var orderBy:String?
-
-    // @DataMember(Order=4)
-    public var orderByDesc:String?
-
-    // @DataMember(Order=5)
-    public var include:String?
-
-    // @DataMember(Order=6)
-    public var fields:String?
-
-    // @DataMember(Order=7)
-    public var meta:[String:String] = [:]
 }
 
 public class MenuItemExampleItem
@@ -2681,13 +2626,13 @@ extension AuthenticateResponse : JsonSerializable
 {
     public static var typeName:String { return "AuthenticateResponse" }
     public static var metadata = Metadata.create([
+            Type<AuthenticateResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
             Type<AuthenticateResponse>.optionalProperty("userId", get: { $0.userId }, set: { $0.userId = $1 }),
             Type<AuthenticateResponse>.optionalProperty("sessionId", get: { $0.sessionId }, set: { $0.sessionId = $1 }),
             Type<AuthenticateResponse>.optionalProperty("userName", get: { $0.userName }, set: { $0.userName = $1 }),
             Type<AuthenticateResponse>.optionalProperty("displayName", get: { $0.displayName }, set: { $0.displayName = $1 }),
             Type<AuthenticateResponse>.optionalProperty("referrerUrl", get: { $0.referrerUrl }, set: { $0.referrerUrl = $1 }),
             Type<AuthenticateResponse>.optionalProperty("bearerToken", get: { $0.bearerToken }, set: { $0.bearerToken = $1 }),
-            Type<AuthenticateResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
             Type<AuthenticateResponse>.objectProperty("meta", get: { $0.meta }, set: { $0.meta = $1 }),
         ])
 }
@@ -2710,20 +2655,6 @@ extension UnAssignRolesResponse : JsonSerializable
             Type<UnAssignRolesResponse>.arrayProperty("allPermissions", get: { $0.allPermissions }, set: { $0.allPermissions = $1 }),
             Type<UnAssignRolesResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
         ])
-}
-
-extension QueryResponse : JsonSerializable
-{
-    public static var typeName:String { return "QueryResponse<T>" }
-    public static var metadata:Metadata {
-        return Metadata.create([
-            Type<QueryResponse<T>>.optionalProperty("offset", get: { $0.offset }, set: { $0.offset = $1 }),
-            Type<QueryResponse<T>>.optionalProperty("total", get: { $0.total }, set: { $0.total = $1 }),
-            Type<QueryResponse<T>>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
-            Type<QueryResponse<T>>.objectProperty("meta", get: { $0.meta }, set: { $0.meta = $1 }),
-            Type<QueryResponse<T>>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
-        ])
-    }
 }
 
 extension ExternalEnum : StringSerializable

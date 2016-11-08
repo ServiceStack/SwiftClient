@@ -1,5 +1,5 @@
 /* Options:
-Date: 2016-11-07 09:01:14
+Date: 2016-11-08 12:19:22
 SwiftVersion: 3.0
 Version: 4.55
 Tip: To override a DTO option, remove "//" prefix before updating
@@ -9,8 +9,8 @@ BaseUrl: http://techstacks.io
 //AddModelExtensions: True
 //AddServiceStackTypes: True
 //IncludeTypes: 
-ExcludeTypes: QueryBase,QueryDb`1,QueryResponse`1,FindTechnologies,Authenticate,AuthenticateResponse,AssignRoles,AssignRolesResponse,UnAssignRoles,UnAssignRolesResponse,Ping
-//ExcludeGenericBaseTypes: True
+ExcludeTypes: Authenticate,AuthenticateResponse,AssignRoles,AssignRolesResponse,UnAssignRoles,UnAssignRolesResponse,Ping
+//ExcludeGenericBaseTypes: False
 //AddResponseStatus: False
 //AddImplicitVersion: 
 //AddDescriptionAsComments: True
@@ -192,6 +192,17 @@ public class GetAllTechnologies : IReturn
     required public init(){}
 }
 
+// @Route("/technology/search")
+// @AutoQueryViewer(Title="Find Technologies", Description="Explore different Technologies", IconUrl="octicon:database", DefaultSearchField="Tier", DefaultSearchType="=", DefaultSearchText="Data")
+public class FindTechnologies<Technology : JsonSerializable> : QueryDb<Technology>, IReturn
+{
+    public typealias Return = QueryResponse<Technology>
+
+    required public init(){}
+    public var name:String?
+    public var nameContains:String?
+}
+
 // @Route("/technology/{Slug}")
 public class GetTechnology : IReturn
 {
@@ -228,7 +239,16 @@ public class GetPageStats : IReturn
     public var type:String?
     public var slug:String?
 }
-//Excluded FindTechStacks : QueryDb<TechnologyStack>
+
+// @Route("/techstacks/search")
+// @AutoQueryViewer(Title="Find Technology Stacks", Description="Explore different Technology Stacks", IconUrl="material-icons:cloud", DefaultSearchField="Description", DefaultSearchType="Contains", DefaultSearchText="ServiceStack")
+public class FindTechStacks<TechnologyStack : JsonSerializable> : QueryDb<TechnologyStack>, IReturn
+{
+    public typealias Return = QueryResponse<TechnologyStack>
+
+    required public init(){}
+    public var nameContains:String?
+}
 
 // @Route("/overview")
 public class Overview : IReturn
@@ -363,7 +383,16 @@ public class ConvertSessionToToken : IReturn, IPost
     // @DataMember(Order=1)
     public var preserveSession:Bool?
 }
-//Excluded FindTechnologiesAdmin : QueryDb<Technology>
+
+// @Route("/admin/technology/search")
+// @AutoQueryViewer(Title="Find Technologies Admin", Description="Explore different Technologies", IconUrl="octicon:database", DefaultSearchField="Tier", DefaultSearchType="=", DefaultSearchText="Data")
+public class FindTechnologiesAdmin<Technology : JsonSerializable> : QueryDb<Technology>, IReturn
+{
+    public typealias Return = QueryResponse<Technology>
+
+    required public init(){}
+    public var name:String?
+}
 
 public class LogoUrlApprovalResponse
 {
@@ -428,6 +457,26 @@ public class GetAllTechnologiesResponse
 {
     required public init(){}
     public var results:[Technology] = []
+}
+
+// @DataContract
+public class QueryResponse<T : JsonSerializable>
+{
+    required public init(){}
+    // @DataMember(Order=1)
+    public var offset:Int?
+
+    // @DataMember(Order=2)
+    public var total:Int?
+
+    // @DataMember(Order=3)
+    public var results:[T] = []
+
+    // @DataMember(Order=4)
+    public var meta:[String:String] = [:]
+
+    // @DataMember(Order=5)
+    public var responseStatus:ResponseStatus?
 }
 
 public class GetTechnologyResponse
@@ -593,6 +642,11 @@ public class TechnologyHistory : TechnologyBase
     public var operation:String?
 }
 
+public class QueryDb<T : JsonSerializable> : QueryBase
+{
+    required public init(){}
+}
+
 public class TechnologyStack : TechnologyStackBase
 {
     required public init(){}
@@ -686,6 +740,31 @@ public class TechnologyStackBase
     public var slug:String?
     public var details:String?
     public var lastStatusUpdate:Date?
+}
+
+public class QueryBase
+{
+    required public init(){}
+    // @DataMember(Order=1)
+    public var skip:Int?
+
+    // @DataMember(Order=2)
+    public var take:Int?
+
+    // @DataMember(Order=3)
+    public var orderBy:String?
+
+    // @DataMember(Order=4)
+    public var orderByDesc:String?
+
+    // @DataMember(Order=5)
+    public var include:String?
+
+    // @DataMember(Order=6)
+    public var fields:String?
+
+    // @DataMember(Order=7)
+    public var meta:[String:String] = [:]
 }
 
 
@@ -854,6 +933,24 @@ extension GetAllTechnologies : JsonSerializable
         ])
 }
 
+extension FindTechnologies : JsonSerializable
+{
+    public static var typeName:String { return "FindTechnologies" }
+    public static var metadata:Metadata {
+        return Metadata.create([
+            Type<FindTechnologies>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
+            Type<FindTechnologies>.optionalProperty("nameContains", get: { $0.nameContains }, set: { $0.nameContains = $1 }),
+            Type<FindTechnologies>.optionalProperty("skip", get: { $0.skip }, set: { $0.skip = $1 }),
+            Type<FindTechnologies>.optionalProperty("take", get: { $0.take }, set: { $0.take = $1 }),
+            Type<FindTechnologies>.optionalProperty("orderBy", get: { $0.orderBy }, set: { $0.orderBy = $1 }),
+            Type<FindTechnologies>.optionalProperty("orderByDesc", get: { $0.orderByDesc }, set: { $0.orderByDesc = $1 }),
+            Type<FindTechnologies>.optionalProperty("include", get: { $0.include }, set: { $0.include = $1 }),
+            Type<FindTechnologies>.optionalProperty("fields", get: { $0.fields }, set: { $0.fields = $1 }),
+            Type<FindTechnologies>.objectProperty("meta", get: { $0.meta }, set: { $0.meta = $1 }),
+        ])
+    }
+}
+
 extension GetTechnology : JsonSerializable
 {
     public static var typeName:String { return "GetTechnology" }
@@ -885,6 +982,23 @@ extension GetPageStats : JsonSerializable
             Type<GetPageStats>.optionalProperty("type", get: { $0.type }, set: { $0.type = $1 }),
             Type<GetPageStats>.optionalProperty("slug", get: { $0.slug }, set: { $0.slug = $1 }),
         ])
+}
+
+extension FindTechStacks : JsonSerializable
+{
+    public static var typeName:String { return "FindTechStacks" }
+    public static var metadata:Metadata {
+        return Metadata.create([
+            Type<FindTechStacks>.optionalProperty("nameContains", get: { $0.nameContains }, set: { $0.nameContains = $1 }),
+            Type<FindTechStacks>.optionalProperty("skip", get: { $0.skip }, set: { $0.skip = $1 }),
+            Type<FindTechStacks>.optionalProperty("take", get: { $0.take }, set: { $0.take = $1 }),
+            Type<FindTechStacks>.optionalProperty("orderBy", get: { $0.orderBy }, set: { $0.orderBy = $1 }),
+            Type<FindTechStacks>.optionalProperty("orderByDesc", get: { $0.orderByDesc }, set: { $0.orderByDesc = $1 }),
+            Type<FindTechStacks>.optionalProperty("include", get: { $0.include }, set: { $0.include = $1 }),
+            Type<FindTechStacks>.optionalProperty("fields", get: { $0.fields }, set: { $0.fields = $1 }),
+            Type<FindTechStacks>.objectProperty("meta", get: { $0.meta }, set: { $0.meta = $1 }),
+        ])
+    }
 }
 
 extension Overview : JsonSerializable
@@ -1004,6 +1118,23 @@ extension ConvertSessionToToken : JsonSerializable
         ])
 }
 
+extension FindTechnologiesAdmin : JsonSerializable
+{
+    public static var typeName:String { return "FindTechnologiesAdmin" }
+    public static var metadata:Metadata {
+        return Metadata.create([
+            Type<FindTechnologiesAdmin>.optionalProperty("name", get: { $0.name }, set: { $0.name = $1 }),
+            Type<FindTechnologiesAdmin>.optionalProperty("skip", get: { $0.skip }, set: { $0.skip = $1 }),
+            Type<FindTechnologiesAdmin>.optionalProperty("take", get: { $0.take }, set: { $0.take = $1 }),
+            Type<FindTechnologiesAdmin>.optionalProperty("orderBy", get: { $0.orderBy }, set: { $0.orderBy = $1 }),
+            Type<FindTechnologiesAdmin>.optionalProperty("orderByDesc", get: { $0.orderByDesc }, set: { $0.orderByDesc = $1 }),
+            Type<FindTechnologiesAdmin>.optionalProperty("include", get: { $0.include }, set: { $0.include = $1 }),
+            Type<FindTechnologiesAdmin>.optionalProperty("fields", get: { $0.fields }, set: { $0.fields = $1 }),
+            Type<FindTechnologiesAdmin>.objectProperty("meta", get: { $0.meta }, set: { $0.meta = $1 }),
+        ])
+    }
+}
+
 extension LogoUrlApprovalResponse : JsonSerializable
 {
     public static var typeName:String { return "LogoUrlApprovalResponse" }
@@ -1087,6 +1218,20 @@ extension GetAllTechnologiesResponse : JsonSerializable
     public static var metadata = Metadata.create([
             Type<GetAllTechnologiesResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
         ])
+}
+
+extension QueryResponse : JsonSerializable
+{
+    public static var typeName:String { return "QueryResponse" }
+    public static var metadata:Metadata {
+        return Metadata.create([
+            Type<QueryResponse>.optionalProperty("offset", get: { $0.offset }, set: { $0.offset = $1 }),
+            Type<QueryResponse>.optionalProperty("total", get: { $0.total }, set: { $0.total = $1 }),
+            Type<QueryResponse>.arrayProperty("results", get: { $0.results }, set: { $0.results = $1 }),
+            Type<QueryResponse>.objectProperty("meta", get: { $0.meta }, set: { $0.meta = $1 }),
+            Type<QueryResponse>.optionalProperty("responseStatus", get: { $0.responseStatus }, set: { $0.responseStatus = $1 }),
+        ])
+    }
 }
 
 extension GetTechnologyResponse : JsonSerializable
