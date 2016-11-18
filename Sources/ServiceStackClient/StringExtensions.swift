@@ -161,9 +161,26 @@ extension Error
     func convertUserInfo<T : JsonSerializable>() -> T? {
         return self.populateUserInfo(instance: T())
     }
-
+    
     func populateUserInfo<T : JsonSerializable>(instance:T) -> T? {
         let to = populateFromDictionary(instance: T(), map: (self as NSError).userInfo, propertiesMap: T.propertyMap)
         return to
+    }
+    
+    var responseStatus:ResponseStatus {
+        return (self as NSError).responseStatus
+    }
+}
+
+extension NSError {
+    var responseStatus:ResponseStatus {
+        let status:ResponseStatus = self.convertUserInfo() ?? ResponseStatus()
+        if status.errorCode == nil {
+            status.errorCode = self.code.toString()
+        }
+        if status.message == nil {
+            status.message = self.localizedDescription
+        }
+        return status
     }
 }
